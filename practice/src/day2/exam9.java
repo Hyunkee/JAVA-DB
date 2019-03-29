@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 public class exam9 {
 	public static void main(String[] args) {
-		/*´Ş·ÂÀÇ °¢ ´Ş¸¶´Ù ¸¶Áö¸· ÀÏ¼ö°¡ ´Ù¸¨´Ï´Ù. ´ŞÀÌ ÀÔ·ÂµÇ¸é ÇØ´çÇÏ´Â ´ŞÀÇ ¸¶Áö¸· 
-		 * ÀÏ¼ö¸¦ Ãâ·ÂÇÏ´Â ÄÚµå¸¦ switch case¹®À» ÀÌ¿ëÇÏ¿© ÀÛ¼ºÇÏ¼¼¿ä*/
+		/*ë‹¬ë ¥ì˜ ê° ë‹¬ë§ˆë‹¤ ë§ˆì§€ë§‰ ì¼ìˆ˜ê°€ ë‹¤ë¦…ë‹ˆë‹¤. ë‹¬ì´ ì…ë ¥ë˜ë©´ í•´ë‹¹í•˜ëŠ” ë‹¬ì˜ ë§ˆì§€ë§‰ 
+		 * ì¼ìˆ˜ë¥¼ ì¶œë ¥í•˜ëŠ” ì½”ë“œë¥¼ switch caseë¬¸ì„ ì´ìš©í•˜ì—¬ ì‘ì„±í•˜ì„¸ìš”*/
 		Scanner scan = new Scanner(System.in);
 		int month = scan.nextInt();
 		switch(month){
 		case 1:	case 3:	case 5:	case 7:	case 8:	case 10: case 12:
-			System.out.println("31ÀÏ");	break;
+			System.out.println("31ì¼");	break;
 		case 4:	case 6:	case 9:	case 11:
-			System.out.println("30ÀÏ");	break;		
+			System.out.println("30ì¼");	break;		
 		case 2:
-			System.out.println("28ÀÏ");	break;
+			System.out.println("28ì¼");	break;
 		default:
-			System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+			System.out.println("ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 		}
 		scan.close();
 	}

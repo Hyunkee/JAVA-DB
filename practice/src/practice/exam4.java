@@ -2,7 +2,7 @@ package practice;
 
 class exam4 {
 	public static void main(String[] args) {		
-		/* 10°ú 3ÀÇ »ê¼ú¿¬»ê °á°ú¸¦ Ãâ·ÂÇÏ¼¼¿ä */		
+		/* 10ê³¼ 3ì˜ ì‚°ìˆ ì—°ì‚° ê²°ê³¼ë¥¼ ì¶œë ¥í•˜ì„¸ìš” */		
 		int num = (10 + 3);
 		int num2 =(10 - 3);
 		int num3 =(10 * 3);

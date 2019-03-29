@@ -2,7 +2,7 @@ package day2;
 
 public class exam11 {
 	public static void main(String[] args) {
-		int i = 0; // ¹İº¹¹®¿¡¼­ »ç¿ëÇÒ º¯¼ö
+		int i = 0; // ë°˜ë³µë¬¸ì—ì„œ ì‚¬ìš©í•  ë³€ìˆ˜
 		for(i=1; i<=5; i++){
 			System.out.println("Hello world!");
 		}

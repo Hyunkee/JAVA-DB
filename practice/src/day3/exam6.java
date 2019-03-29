@@ -3,21 +3,21 @@ package day3;
 public class exam6 {	
 
 	public static void main(String[] args) {
-		/*±¸±¸´Ü ÀüÃ¼¸¦ Ãâ·ÂÇÏ¼¼¿ä.*/
+		/*êµ¬êµ¬ë‹¨ ì „ì²´ë¥¼ ì¶œë ¥í•˜ì„¸ìš”.*/
 		
 		/*int num=7;		
 		int i ;
 		int res = 0;
 		
 		for(num=2; num<=10; num++){
-			System.out.println(num + "´Ü");
+			System.out.println(num + "ë‹¨");
 			for(i=1;i<=9;i++){
 				res = num * i;
 				System.out.println(num + "x" + i + "=" + res );			
 			}
 		}*/
 		
-		/* ±¸±¸´Ü 10´Ü¸¸ Ãâ·Â */
+		/* êµ¬êµ¬ë‹¨ 10ë‹¨ë§Œ ì¶œë ¥ */
 		/*int num=10;
 		int i;
 		int res = 0;

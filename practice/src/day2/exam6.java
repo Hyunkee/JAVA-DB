@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class exam6 {
 	public static void main(String[] args) {
-		/*Á¡¼ö°¡ ÁÖ¾îÁö¸é Á¡¼ö¿¡ ¸Â´Â ÇĞÁ¡À» Ãâ·ÂÇÏ´Â ÄÚµå¸¦ ÀÛ¼ºÇÏ¼¼¿ä.
-		 * 90Á¡ÀÌ»ó ~ 100Á¡ÀÌÇÏ : A
-		 * 80Á¡ÀÌ»ó ~ 90Á¡¹Ì¸¸ : B
-		 * 70Á¡ÀÌ»ó ~ 80Á¡¹Ì¸¸ ...
-		 * ±×¿Ü Á¡¼ö´Â Àß¸øµÈ Á¡¼öÀÔ´Ï´Ù·Î Ãâ·Â.*/
+		/*ì ìˆ˜ê°€ ì£¼ì–´ì§€ë©´ ì ìˆ˜ì— ë§ëŠ” í•™ì ì„ ì¶œë ¥í•˜ëŠ” ì½”ë“œë¥¼ ì‘ì„±í•˜ì„¸ìš”.
+		 * 90ì ì´ìƒ ~ 100ì ì´í•˜ : A
+		 * 80ì ì´ìƒ ~ 90ì ë¯¸ë§Œ : B
+		 * 70ì ì´ìƒ ~ 80ì ë¯¸ë§Œ ...
+		 * ê·¸ì™¸ ì ìˆ˜ëŠ” ì˜ëª»ëœ ì ìˆ˜ì…ë‹ˆë‹¤ë¡œ ì¶œë ¥.*/
 		Scanner scan = new Scanner(System.in);
 		double score = scan.nextDouble();
 		if(90 <= score && score <= 100){ //=if((int)score/10 == 9 || score == 100){
@@ -22,7 +22,7 @@ public class exam6 {
 		}else if(0 <= score && score <60){
 			System.out.println("F");
 		}else{//if(score<0 || score>100)
-			System.out.println("Àß¸øµÈ Á¡¼öÀÔ´Ï´Ù.");
+			System.out.println("ì˜ëª»ëœ ì ìˆ˜ì…ë‹ˆë‹¤.");
 		}
 		scan.close();
 	}

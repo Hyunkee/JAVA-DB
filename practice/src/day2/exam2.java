@@ -2,13 +2,13 @@ package day2;
 
 public class exam2 {
 	public static void main(String[] args) {
-		/*³ªÀÌ°¡ 20ÀÌ»óÀÌ¸é ¼ºÀÎÀÌ¶ó°í Ãâ·ÂÇÏ°í ¾Æ´Ï¸é Ã»¼Ò³â ÀÌ¶ó°í Ãâ  ·ÂÇÏ´Â ÄÚµå¸¦ ÀÛ¼ºÇÏ¼¼¿ä*/
+		/*ë‚˜ì´ê°€ 20ì´ìƒì´ë©´ ì„±ì¸ì´ë¼ê³  ì¶œë ¥í•˜ê³  ì•„ë‹ˆë©´ ì²­ì†Œë…„ ì´ë¼ê³  ì¶œ  ë ¥í•˜ëŠ” ì½”ë“œë¥¼ ì‘ì„±í•˜ì„¸ìš”*/
 		int num = 20;
 		if( num >= 20 ){
-			System.out.println("¼ºÀÎ");
+			System.out.println("ì„±ì¸");
 		}		
-		else{//else´Â ´Üµ¶À¸·Î ¾²ÀÏ¼ö ¾ø´Ù
-			System.out.println("Ã»¼Ò³â");
+		else{//elseëŠ” ë‹¨ë…ìœ¼ë¡œ ì“°ì¼ìˆ˜ ì—†ë‹¤
+			System.out.println("ì²­ì†Œë…„");
 		}		
 	}
 }

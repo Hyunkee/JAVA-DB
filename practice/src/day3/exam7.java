@@ -2,26 +2,26 @@ package day3;
 
 public class exam7 {
 	public static void main(String[] args) {
-		/* ¹æ¹ý1 */
+		/* ë°©ë²•1 */
 		/*System.out.println("*****");
 		System.out.println("*****");
 		System.out.println("*****");
 		System.out.println("*****");
 		System.out.println("*****");*/
 		
-		/*¹æ¹ý2 */
+		/*ë°©ë²•2 */
 		/*int i;
 		for(i=1;i<=5;i++){
 			System.out.println("*****");
 		}*/
 		
-		/*¹æ¹ý3*/
+		/*ë°©ë²•3*/
 		/*int i, num;*/		
 		/*for(i=1;i<=5;i++){			
 			for(num=1;num<=5;num++){
 				System.out.print("*");
 			}
-			System.out.println(); // °ýÈ£¿¡ ¾Æ¹«°Íµµ ¾È½áÁ®µµ µÈ´Ù. enter ¿ªÇÒÀ» ÇØÁÜ.
+			System.out.println(); // ê´„í˜¸ì— ì•„ë¬´ê²ƒë„ ì•ˆì¨ì ¸ë„ ëœë‹¤. enter ì—­í• ì„ í•´ì¤Œ.
 		}*/
 		
 	}

@@ -7,7 +7,7 @@ class exam5 {
 		int money = 3000;
 		int year = 365;
 		int totalMoney = age * day * money * year;
-		System.out.println("Áö±İ±îÁö ¸ÔÀº ±İ¾× : " + totalMoney + " ¿ø ");
+		System.out.println("ì§€ê¸ˆê¹Œì§€ ë¨¹ì€ ê¸ˆì•¡ : " + totalMoney + " ì› ");
 		/*int num = 3000 * 3 * 365 * 28;
 		System.out.println(num);*/
 	}

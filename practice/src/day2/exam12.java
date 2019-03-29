@@ -2,17 +2,17 @@ package day2;
 
 public class exam12 {
 	public static void main(String[] args) {
-		/*1¿¡¼­ 5±îÁö Ãâ·ÂÇÏ´Â ÄÚµå¸¦ ¹İº¹¹®À» ÅëÇØ ÀÛ¼ºÇÏ¼¼¿ä
+		/*1ì—ì„œ 5ê¹Œì§€ ì¶œë ¥í•˜ëŠ” ì½”ë“œë¥¼ ë°˜ë³µë¬¸ì„ í†µí•´ ì‘ì„±í•˜ì„¸ìš”
 		int i = 0;		
 		for(i=1; i<=5; i++){
 			System.out.println(i);
 		}*/
-		// 1ºÎÅÍ 10±îÁöÀÇ ÇÕ
+		// 1ë¶€í„° 10ê¹Œì§€ì˜ í•©
 		int i = 0;
 		int sum = 0;
 		for(i=1, sum=0; i<=10; i++){
 			sum += i;//sum = sum + i;
 		}
-		System.out.println("1ºÎÅÍ 10±îÁöÀÇ ÇÕ : " + sum );
+		System.out.println("1ë¶€í„° 10ê¹Œì§€ì˜ í•© : " + sum );
 	}
 }

@@ -4,26 +4,26 @@ import java.util.Scanner;
 
 public class exam10 {
 	public static void main(String[] args) {
-		//·£´ıÀ¸·Î ¿øÇÏ´Â ¹üÀ§ÀÇ Á¤¼ö(a~b)¸¦ ¸¸µå´Â ¹æ¹ı
+		//ëœë¤ìœ¼ë¡œ ì›í•˜ëŠ” ë²”ìœ„ì˜ ì •ìˆ˜(a~b)ë¥¼ ë§Œë“œëŠ” ë°©ë²•
 		// a <= Math.random()*(b-a+1) + a < b+1
 		int min = 1;
 		int max = 3;
-		// min ~ max »çÀÌÀÇ Á¤¼ö¸¦ ·£´ıÀ¸·Î »ı¼ºÇÏ´Â ÄÚµå
-		// comÀÌ °¡À§(1), ¹ÙÀ§(2), º¸(3)Áß¿¡¼­ ·£´ıÀ¸·Î ÇÏ³ª ¼±ÅÃ
+		// min ~ max ì‚¬ì´ì˜ ì •ìˆ˜ë¥¼ ëœë¤ìœ¼ë¡œ ìƒì„±í•˜ëŠ” ì½”ë“œ
+		// comì´ ê°€ìœ„(1), ë°”ìœ„(2), ë³´(3)ì¤‘ì—ì„œ ëœë¤ìœ¼ë¡œ í•˜ë‚˜ ì„ íƒ
 		int com = (int)(Math.random()*(max-min+1) + min);
 		int user = 0;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("°¡À§(1),¹ÙÀ§(2),º¸(3) Áß ÇÏ³ª´Â ÀÔ·ÂÇÏ¼¼¿ä : > ");
+		System.out.println("ê°€ìœ„(1),ë°”ìœ„(2),ë³´(3) ì¤‘ í•˜ë‚˜ëŠ” ì…ë ¥í•˜ì„¸ìš” : > ");
 		user = scan.nextInt();
 		switch(user-com){
 			case 0:
-			System.out.println("¹«½ÂºÎÀÔ´Ï´Ù.");
+			System.out.println("ë¬´ìŠ¹ë¶€ì…ë‹ˆë‹¤.");
 			break;
 			case -1: case 2:
-			System.out.println("ÄÄÇ»ÅÍ ½ÂÀÔ´Ï´Ù.");
+			System.out.println("ì»´í“¨í„° ìŠ¹ì…ë‹ˆë‹¤.");
 			break;
 			case 1: case -2: //default:
-			System.out.println("»ç¿ëÀÚ ½ÂÀÔ´Ï´Ù.");
+			System.out.println("ì‚¬ìš©ì ìŠ¹ì…ë‹ˆë‹¤.");
 			break;
 		}
 		System.out.println(com);

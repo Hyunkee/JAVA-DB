@@ -2,19 +2,19 @@ package day3;
 
 public class exam5 {
 	public static void main(String[] args) {
-		/*µÎ ¼öÀÇ ÃÖ¼Ò °ø¹è¼ö¸¦ ±¸ÇÏ´Â ÄÚµå¸¦ ÀÛ¼ºÇÏ¼¼¿ä.
-		 * ÃÖ¼Ò °ø¹è¼ö´Â µÎ ¼öÀÇ °ø¹è¼ö Áß °¡Àå ÀÛÀº °ø¹è¼ö
-		 * °ø¹è¼ö´Â µÎ ¼öÀÇ ¹è¼ö Áß °øÅëÀ¸·Î Æ÷ÇÔÇÑ ¹è¼ö
-		 * 10ÀÇ ¹è¼ö : 10 20 30 40 50 60 ...
-		 * 15ÀÇ ¹è¼ö : 15 30 45 60 75 90 ...
-		 * 10°ú 15ÀÇ °ø¹è¼ö : 30 60 90 120
-		 * 10°ú 15ÀÇ ÃÖ¼Ò °ø¹è¼ö : 30*/
+		/*ë‘ ìˆ˜ì˜ ìµœì†Œ ê³µë°°ìˆ˜ë¥¼ êµ¬í•˜ëŠ” ì½”ë“œë¥¼ ìž‘ì„±í•˜ì„¸ìš”.
+		 * ìµœì†Œ ê³µë°°ìˆ˜ëŠ” ë‘ ìˆ˜ì˜ ê³µë°°ìˆ˜ ì¤‘ ê°€ìž¥ ìž‘ì€ ê³µë°°ìˆ˜
+		 * ê³µë°°ìˆ˜ëŠ” ë‘ ìˆ˜ì˜ ë°°ìˆ˜ ì¤‘ ê³µí†µìœ¼ë¡œ í¬í•¨í•œ ë°°ìˆ˜
+		 * 10ì˜ ë°°ìˆ˜ : 10 20 30 40 50 60 ...
+		 * 15ì˜ ë°°ìˆ˜ : 15 30 45 60 75 90 ...
+		 * 10ê³¼ 15ì˜ ê³µë°°ìˆ˜ : 30 60 90 120
+		 * 10ê³¼ 15ì˜ ìµœì†Œ ê³µë°°ìˆ˜ : 30*/
 		int i, lcm = 1;
 		int num = 10;
 		int num2 = 15;		
-		// ¹Ýº¹È½¼ö : i´Â 1ºÎÅÍ num1*num2±îÁö ÇÏ³ª¾¿ Áõ°¡
-		// ½ÇÇà¹® i°¡ num1¹è¼öÀÌ°í i°¡ num2ÀÇ ¹è¼öÀÌ¸é lcm¿¡ i¸¦ ÀúÀåÇÏ°í ¹Ýº¹¹®À» ºüÁ®³ª¿Â´Ù
-		// ¹Ýº¹¹®ÀÌ Á¾·áµÈ ÈÄ lcmÀ» Ãâ·ÂÇÑ´Ù.
+		// ë°˜ë³µíšŸìˆ˜ : iëŠ” 1ë¶€í„° num1*num2ê¹Œì§€ í•˜ë‚˜ì”© ì¦ê°€
+		// ì‹¤í–‰ë¬¸ iê°€ num1ë°°ìˆ˜ì´ê³  iê°€ num2ì˜ ë°°ìˆ˜ì´ë©´ lcmì— ië¥¼ ì €ìž¥í•˜ê³  ë°˜ë³µë¬¸ì„ ë¹ ì ¸ë‚˜ì˜¨ë‹¤
+		// ë°˜ë³µë¬¸ì´ ì¢…ë£Œëœ í›„ lcmì„ ì¶œë ¥í•œë‹¤.
 		for(i=1;i<=num*num2; i++){
 			if(i % num == 0  &&  i % num2 == 0){
 				lcm = i;
@@ -23,7 +23,7 @@ public class exam5 {
 		}
 		/* int tmp;
 		 * if(num2 > num){
-		 * 	//µÎ¼ö¸¦ ¹Ù²Û´Ù
+		 * 	//ë‘ìˆ˜ë¥¼ ë°”ê¾¼ë‹¤
 		 * 		tmp = num;
 		 * 		num = num2;
 		 *  	num2 = tmp;
@@ -33,7 +33,7 @@ public class exam5 {
 					  lcm = i;
 					  break;
 				   }			
-			   }*///¹Ýº¹È½¼ö¸¦ È¿À²ÀûÀ¸·Î ÁÙ¿©¼­ ÇÏ´Â ¹æ¹ý
-		System.out.println(num+"°ú"+num2+"ÀÇ ÃÖ¼Ò °ø¹è¼ö : "+ lcm);
+			   }*///ë°˜ë³µíšŸìˆ˜ë¥¼ íš¨ìœ¨ì ìœ¼ë¡œ ì¤„ì—¬ì„œ í•˜ëŠ” ë°©ë²•
+		System.out.println(num+"ê³¼"+num2+"ì˜ ìµœì†Œ ê³µë°°ìˆ˜ : "+ lcm);
 	}
 }

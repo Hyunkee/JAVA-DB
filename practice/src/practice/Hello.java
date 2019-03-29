@@ -4,9 +4,9 @@ public class Hello {
 
 	public static void main(String[] args) {
 		/* 
-		 * println("¹®ÀÚ¿­") : ³»°¡ ¿øÇÏ´Â ¹®ÀÚ¿­À» ÄÜ¼Ö¿¡ Ãâ·ÂÇÑ ÈÄ ¿£ÅÍ¸¦ ÀÔ·Â
+		 * println("ë¬¸ìì—´") : ë‚´ê°€ ì›í•˜ëŠ” ë¬¸ìì—´ì„ ì½˜ì†”ì— ì¶œë ¥í•œ í›„ ì—”í„°ë¥¼ ì…ë ¥
 		 * 
-		 * print("¹®ÀÚ¿­") : ³»°¡ ¿øÇÏ´Â ¹®ÀÚ¿­À» ÄÜ¼Ö¿¡ Ãâ·Â
+		 * print("ë¬¸ìì—´") : ë‚´ê°€ ì›í•˜ëŠ” ë¬¸ìì—´ì„ ì½˜ì†”ì— ì¶œë ¥
 		 * */
 		/*
 		System.out.println("Hello");
@@ -22,19 +22,19 @@ public class Hello {
 		System.out.println(ch);
 		System.out.println(num2);
 		System.out.println(isEven);*/		
-		//MAX_SIZE¶ó´Â »ó¼ö¿¡ ¸®ÅÍ·² 10ÀÇ °ªÀ» ÀúÀå
+		//MAX_SIZEë¼ëŠ” ìƒìˆ˜ì— ë¦¬í„°ëŸ´ 10ì˜ ê°’ì„ ì €ì¥
 		/*final int MAX_SIZE = 10;
 		int num1 = 10;
 		long num3 = 10l;
 		float num4 = 1.123f;
 		double num5 = 1.123d;*/
 		/*int num = 10;
-		System.out.println("numÀÇ °ªÀº"+ num + "ÀÔ´Ï´Ù.");			
-		System.out.printf("numÀÇ °ªÀº %d ÀÔ´Ï´Ù. %d", num,num);*/
+		System.out.println("numì˜ ê°’ì€"+ num + "ì…ë‹ˆë‹¤.");			
+		System.out.printf("numì˜ ê°’ì€ %d ì…ë‹ˆë‹¤. %d", num,num);*/
 		
 			/*String input = scan.nextLine();
 			System.out.println(input);
-			num = Integer.parseInt(input);*///nextLineÀ» ¾µ °æ¿ì
+			num = Integer.parseInt(input);*///nextLineì„ ì“¸ ê²½ìš°
 			/*Scanner scan = new Scanner(System.in);
 			int num = 0;
 			num = scan.nextInt();
@@ -42,24 +42,24 @@ public class Hello {
 			double num2 = scan.nextDouble();
 			System.out.println(num2);
 			char op = scan.next().charAt(0);
-			System.out.println(op);*/// Á¤¼ö ½Ç¼ö ¹®ÀÚ¿­ Â÷·Ê·Î ÇÏ±â
+			System.out.println(op);*/// ì •ìˆ˜ ì‹¤ìˆ˜ ë¬¸ìì—´ ì°¨ë¡€ë¡œ í•˜ê¸°
 		
 		/*int num ='a';
 		double num2 = 1.23f;
 		float num3 = (float)1.23d;
 		num = (int)num3;
-		System.out.println(num);*///¸í½ÃÀûº¯È¯
+		System.out.println(num);*///ëª…ì‹œì ë³€í™˜
 		
-			// ´ëÀÔ¿¬»ê (=)
-			// ´ëÀÔ¿¬»êÀÚ¸¦ ±âÁØÀ¸·Î ÁÂÃø¿¡´Â ¹«Á¶°Ç º¯¼ö¸í 1°³°¡ ¿Í¾ßÇÑ´Ù.
-			// ³ªÁß¿¡ Á¶°Ç¹®¿¡¼­ ºñ±³¿¬»êÀÚ¿Í ´ëÀÔ¿¬»êÀÚ¸¦ È¥µ¿
+			// ëŒ€ì…ì—°ì‚° (=)
+			// ëŒ€ì…ì—°ì‚°ìë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì¢Œì¸¡ì—ëŠ” ë¬´ì¡°ê±´ ë³€ìˆ˜ëª… 1ê°œê°€ ì™€ì•¼í•œë‹¤.
+			// ë‚˜ì¤‘ì— ì¡°ê±´ë¬¸ì—ì„œ ë¹„êµì—°ì‚°ìì™€ ëŒ€ì…ì—°ì‚°ìë¥¼ í˜¼ë™
 			/*int num = 0;
 			num = 3;
 			int num1 = 10, num2 = 20;
 			int res = 0;
-			res = num1 + num2;*///¿Ã¹Ù¸¥¿¹
-			//num1 + num2 = res; //¿¡·¯¹ß»ı
-			//3 = num;//¿¡·¯¹ß»ı
+			res = num1 + num2;*///ì˜¬ë°”ë¥¸ì˜ˆ
+			//num1 + num2 = res; //ì—ëŸ¬ë°œìƒ
+			//3 = num;//ì—ëŸ¬ë°œìƒ
 		
 		//+, -, *, /
 		/*int num1 = 1 + 2;
@@ -74,37 +74,37 @@ public class Hello {
 		char ch = 'A'+1;
 		System.out.println(ch);
 		char ch2 = (char)(ch + 1);
-		System.out.println(ch2);*///Á¤¼ö + Á¤¼ö / Á¤¼ö - Á¤¼ö / Á¤¼ö * Á¤¼ö /..
+		System.out.println(ch2);*///ì •ìˆ˜ + ì •ìˆ˜ / ì •ìˆ˜ - ì •ìˆ˜ / ì •ìˆ˜ * ì •ìˆ˜ /..
 		
-			/*System.out.println(5 % 3);*/ //5¸¦ 3À¸·Î ³ª´« °ª *³ª¸ÓÁö¿¬»êÀÚ
+			/*System.out.println(5 % 3);*/ //5ë¥¼ 3ìœ¼ë¡œ ë‚˜ëˆˆ ê°’ *ë‚˜ë¨¸ì§€ì—°ì‚°ì
 			
 		/*System.out.println( 1<2 );
 		System.out.println( 1>2 );
 		System.out.println( 1<=2 );
 		System.out.println( 1>=2 );
 		System.out.println( 1==2 );
-		System.out.println( 1!=2 );*///ºñ±³ ¿¬»êÀÚ
+		System.out.println( 1!=2 );*///ë¹„êµ ì—°ì‚°ì
 		
 			/*int num1 = 7;
 			int num2 = 9;*/
-			//System.out.println(num1 & num2); //&(AND¿¬»êÀÚ)
-			//System.out.println(num1 ^ num2); //^(XOR ¿¬»êÀÚ)
+			//System.out.println(num1 & num2); //&(ANDì—°ì‚°ì)
+			//System.out.println(num1 ^ num2); //^(XOR ì—°ì‚°ì)
 		
 		/*int num = 10;		
-		System.out.println("ÈÄÀ§Çü ÁøÇà : "+num++);
-		System.out.println("ÈÄÀ§Çü °á°ú : "+num);
+		System.out.println("í›„ìœ„í˜• ì§„í–‰ : "+num++);
+		System.out.println("í›„ìœ„í˜• ê²°ê³¼ : "+num);
 		num = 10;
-		System.out.println("ÀüÀ§Çü ÁøÇà : "+ ++num);
-		System.out.println("ÀüÀ§Çü °á°ú : "+num);
+		System.out.println("ì „ìœ„í˜• ì§„í–‰ : "+ ++num);
+		System.out.println("ì „ìœ„í˜• ê²°ê³¼ : "+num);
 		
 		num = 10;
 		num = num + 1; //++num; num++;
-		System.out.println("ÀüÀ§Çü ÁøÇà : "+ num);
-		System.out.println("ÀüÀ§Çü °á°ú : "+num);
+		System.out.println("ì „ìœ„í˜• ì§„í–‰ : "+ num);
+		System.out.println("ì „ìœ„í˜• ê²°ê³¼ : "+num);
 		
 		int x = 20;
 		boolean isEven = x%2==0 ? true:false;
-		System.out.println(x+"Àº Â¦¼ö? " +isEven);
+		System.out.println(x+"ì€ ì§ìˆ˜? " +isEven);
 		
 		int num2 = 10;		
 		num2 += 1; // num2 = num2 + 1;

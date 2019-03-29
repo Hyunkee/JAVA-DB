@@ -2,7 +2,7 @@ package practice;
 
 class exam1 {
 	public static void main(String[] args) {
-		/* 10À» 3À¸·Î ³ª´« °ª*/
+		/* 10ì„ 3ìœ¼ë¡œ ë‚˜ëˆˆ ê°’*/
 		int num1 = 10, num2 = 3;
 		double res;
 		res = num1/(double)num2;

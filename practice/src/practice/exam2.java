@@ -6,7 +6,7 @@ class exam2 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int num = scan.nextInt();
-		System.out.println("ÀÔ·ÂÇÑ ¼ö : " + num);
+		System.out.println("ìž…ë ¥í•œ ìˆ˜ : " + num);
 		scan.close();
 	}
 }
