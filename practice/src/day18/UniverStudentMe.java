@@ -1,6 +1,6 @@
 package day18;
 
-import day18.UniStudent.CollegianYear;
+
 import day18.UniStudent.Gender;
 
 public class UniverStudentMe {
