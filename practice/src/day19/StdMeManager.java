@@ -64,13 +64,13 @@ public class StdMeManager {
 		System.out.println("----정보를 입력하세요----");
 		System.out.println("학번 : ");
 		String id = scan.next().trim();
-		Std tmp = new Std();
+		StdMe tmp = new StdMe();
 		tmp.setId(id);
 		return tmp;
 	}
 	
 	public StdMe inputStdMe(Scanner scan){
-		Std tmp = inputId(scan);
+		StdMe tmp = inputId(scan);
 		System.out.print("이름 : ");
 		String name = scan.next();
 		System.out.print("학교이름 : ");
@@ -79,7 +79,7 @@ public class StdMeManager {
 		String major = scan.next();		
 		System.out.println("---------------------");
 		tmp.setName(name);
-		tmp.setSname(sName);
+		tmp.setsName(sName);
 		tmp.setMajor(major);		
 		return tmp;
 	}
