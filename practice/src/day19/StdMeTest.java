@@ -24,14 +24,14 @@ public class StdMeTest {
 					System.out.println("이미 등록된 학번입니다.");
 				break;
 			case 2 : 
-				Std s2 = sMMng.inputStd(scan);
+				StdMe s2 = sMMng.inputStdMe(scan);
 				if(sMMng.update(s2))
 					System.out.println("학생정보를 수정 했습니다.");
 				else
 					System.out.println("없는 학번입니다.");
 				break;
 			case 3 : 
-				Std s3 = sMMng.inputId(scan);
+				StdMe s3 = sMMng.inputId(scan);
 				if(sMMng.delete(s3))
 					System.out.println("해당 학생 정보를 삭제 했습니다.");
 				else
