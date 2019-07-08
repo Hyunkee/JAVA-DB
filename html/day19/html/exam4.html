@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- <script src="../js/exam4.js"></script> -->
+    <script>
+        // 현재위치를 나타내는 전역변수 선언 초기0
+
+        // 다음버튼 클릭
+        // 1. 현재 위치를 증가
+        // 2. 증가된 위치가 3인 경우 현재 위치를 2로 수정
+        // 3. 모든 박스에 빨간색 테두리 제거(검은색으로 변경)
+        // 4. 현재 위치의 박스만 빨간색 테두리 추가
+
+        // 이전버튼 클릭
+        // 1. 현재 위치를 감소
+        // 2. 감소된 위치가 -1인 경우 현재 위치를 0으로 수정
+        // 3. 모든 박스에 빨간색 테두리 제거(검은색으로 변경)
+        // 4. 현재 위치의 박스만 빨간색 테두리 추가
+        
+        $(document).ready(function(){            
+            var pos = 0; 
+            var cnt = 0;
+            $('.btn-next').click(function(){
+                pos++; // 클릭했을때 pos 하나씩 증가
+                if(pos == 3) pos = 2; // pos가 3일때 pos는 2로 바뀜
+                test();                
+            });           
+            $('.btn-prev').click(function(){
+                pos--; // 클릭했을때 pos 하나씩 감소
+                if(pos == -1) pos = 0; // pos가 -1일때 pos는 0으로 바뀜
+                test();                
+            });  
+            function test(){
+                $('.box').removeClass('box-color'); // 클릭했을때 모든클래스에있는  box-color클래스를 제거
+                $('.box').eq(pos).addClass('box-color'); // 클릭했을때 .box클래스(번지수)에 box-color클래스를 추가
+            }
+        });
+    </script>
+    <title>Document</title>
+    <style>
+        .box{
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+        .box-color{
+            border-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box-color"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div>
+        <button class="btn-prev">이전</button>
+        <button class="btn-next">다음</button>
+    </div>
+</body>
+</html>

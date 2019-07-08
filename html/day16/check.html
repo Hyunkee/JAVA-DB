@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" name="" id="" onchange="click1(this)"><br />
+    <input type="checkbox" name="" id="" onchange="click2(this.checked)"> <!--여기서 checked는 값이다. true or false-->
+    <script>
+        //방법 1
+        function click1(obj){
+            if(obj.checked == true){
+                alert('체크 되었습니다.')
+            }else
+                alert('체크해제 되었습니다.')
+        }
+        //방법 2
+        function click2(isChecked){ // 여기서 isChecked는 매개변수의 이름
+            if(isChecked){
+                alert('체크 되었습니다.')                
+            }else
+                alert('해제 되었습니다.')
+        }
+    </script>
+</body>
+</html>

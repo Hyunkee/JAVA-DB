@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS `sql`.`professor`;
+CREATE TABLE `sql`.`professor` (
+  	`professor_num` INT NOT NULL,
+ 	 `professor_name` VARCHAR(20) NULL,
+ 	 `professor_age` INT NOT NULL DEFAULT '0', 	 
+  PRIMARY KEY (`professor_num`))

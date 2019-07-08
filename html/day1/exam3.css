@@ -1,0 +1,25 @@
+
+body{
+    font-weight: 400;/* 글자 굵기 */
+    font-size: 20px; /* 글자 크기 */    
+    text-decoration: underline;
+    /* color: #ff0000; 색상코드 */
+    /* color: red; 색상명 */
+    color: rgb(255, 0, 0); /* rgb 값 */
+    text-align: center;
+}
+body>div{
+    font-size: 0px;
+}
+div>div{
+    font-size: 20px;
+    display: inline-block;
+    /* border-style: solid;
+    border-color: black;
+    border-width: 1px; */
+    border-radius: 20px;
+    border: 1px solid blue;
+    width : 100px;
+    height: 100px;
+    
+}

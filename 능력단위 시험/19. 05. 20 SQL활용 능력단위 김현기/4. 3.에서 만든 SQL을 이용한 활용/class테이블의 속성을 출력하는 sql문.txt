@@ -1,0 +1,8 @@
+1.INSERT INTO `sql`.`subject` (`subject_code`, `subject_tile`, `subject_point`, `subject_time`) 
+VALUES ('SQL123', 'SQL', '3', '4');
+
+2.INSERT INTO `sql`.`professor` (`professor_num`, `professor_name`, `professor_age`) 
+VALUES ('1', 'È«±æµ¿', '45');
+
+3.INSERT INTO `sql`.`class` (`class_num`, `class_subject_code`, `class_professor_num`, `class_room`) 
+VALUES ('1', 'SQL123', '1', '3È£½Ç');

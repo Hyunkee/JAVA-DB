@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML에서는 엔터와 여러개의 공백이 하나의 공백으로 처리된다. -->
+    <!--    block 태그는 라인이 바뀌는 태그
+            inline 태그는 라인이 바뀌지 않는 태그
+            주석은 주석처리 할 부분을 블럭지정 후 Ctrl + / -->
+    <h1>제목1</h1>
+    <h2>제목2</h2>
+    <h3>제목3</h3> <!-- 1. h태그는 h6까지 있다. 
+                        2. 자동으로 위아래 여백이 들어간다. 
+                        3. 라인이 바뀌기 때문에 block태그에 포함된다. -->
+    <h4>제목4</h4>
+    <h5>제목5</h5>
+    <h6>제목6</h6>
+    <p>
+        <i>안녕하세요.</i> 제이름은 <b>홍길동</b>입니다. <br>        
+        만나서 반갑습니다.
+    </p>
+    저도 만나서 반갑습니다.
+    <hr>
+    <div> <!-- div는 여백이 없다.-->
+        안녕하세요. 제이름은 홍길동입니다.
+    </div>
+    저도 만나서 반갑습니다.
+    <!-- alt -> 이미지로딩을 실패했을때 불러올 대체 텍스트 -->
+    <img src="http://post.phinf.naver.net/20160620_26/1466412119736lhMcn_JPEG/Igid7oAkR5pijZfhJGVZttt8OTss.jpg" alt="" /> 
+    <img src="../img/cat1.png" alt="대체 텍스트 고양이"  width="100%"/> 
+    <!-- 엔터를 입력하면 html에서는 공백으로 입력 되기 때문에 이미지 사이에 공백이 들어간다.-->
+    <img src="../img/cat1.png" alt="" width="300px" height=""/><!-- 가로 또는 세로 중 하나만 
+                                                                    설정해주면 나머지는 자동으로 설정된다.-->
+    <!-- 버튼에서 꼭 기억해야 할 사항 일반적인 곳에서는 문제가 안되는데 form태그 안에서는 다음 내용을 
+    기억해야한다. form태그 안이 아닌곳에서는 button에 type을 지정 안하는 경우
+    type에 button이 적용 된다. 그런데 form태그 안에서는 button 타입을 지정안하는 경우
+    type이 submit으로 적용된다. 따라서 form태그 안에서 일반 button으로 처리하고 싶으면 type을
+    button으로 꼭 지정해야한다
+    -->
+    <br>
+    <button>버튼</button>
+    <form action="/test" method="GET">
+        <button>타입지정X</button>
+        <button type="button">타입지정O</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script> <!-- src를 이용하여 jquery 연결을 먼저 해주어야함-->
+    <script>
+        $(document).ready(function(){ // window.onload 역할
+            $('button').click(function(){
+                console.log('버튼을 클릭했습니다.')
+                alert('클릭하였습니다.')
+            });
+        });
+        $(document).ready(function(){
+            $('input').click(function(){
+                console.log('클릭했습니다.')
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <input type="text" name="" id="">
+    <button>클릭1</button>
+    <button>클릭2</button>
+    <button>클릭3</button>
+    <button>클릭4</button>
+</body>
+</html>

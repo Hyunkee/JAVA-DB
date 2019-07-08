@@ -103,5 +103,5 @@ public class HomeController {
 		else {
 			return "redirect:/member/modify";
 		}
-	}
+	}	
 }

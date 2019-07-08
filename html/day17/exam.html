@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- http://code.jquery.com/jquery-3.4.1.js -->
+    
+    <title>Document</title>
+    <script>
+        // onload는 하나만 적용이 된다.
+        window.onload = function(){
+            test();
+        }
+        function test(){
+            var str = document.getElementsByTagName('input')[0];
+            console.log(str);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" value="123" onchange="test()">
+    
+</body>
+</html>

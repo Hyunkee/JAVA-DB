@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .table th,
+        .table td{
+            width: 100px;
+            height: 40px;
+            border: 1px solid black;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table.record{
+            border-collapse: collapse;
+            margin-bottom: 50px;
+        }
+        .record td,
+        .record th{
+            
+            padding: 5px;
+            height : 15px;
+            width : 100px;
+        }
+        .record td{
+            text-align: center;
+        }
+        .record thead,
+        .record tfoot{
+            background : darkgray;
+            color : yellow;
+            text-align: center;
+        }
+
+        
+        .record tbody tr:nth-child(even){
+            background : aliceblue;
+        }
+        .record tbody tr:hover{
+            background: pink;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <table class="record">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>HTML</th>
+                <th>CSS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>황기태</td>
+                <td>80</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>이재문</td>
+                <td>95</td>
+                <td>99</td>
+            </tr>
+            <tr>
+                <td>이병은</td>
+                <td>85</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>김남윤</td>
+                <td>50</td>
+                <td>40</td>
+            </tr>                 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>합</th>
+                <th>310</th>
+                <th>249</th>
+            </tr>
+        </tfoot>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>  <!-- tr은 한행을 의미-->
+                <th>이름</th>
+                <th>나이</th>
+                <th>주소</th>
+                <th>성별</th>
+                <th colspan="2">주민번호1</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">홍길동</td>
+                <td>20</td>
+                <td>대한민국</td>
+                <td>남</td>
+                <td>000101-3xxxxxx</td>
+                <td>000101-3xxxxxx</td>
+            </tr>
+            <tr>            
+                <td>20</td>
+                <td>대한민국</td>
+                <td>남</td>
+                <td>000101-3xxxxxx</td>
+                <td>000101-3xxxxxx</td>
+            </tr>
+            <tr>
+                <td>이순신</td>
+                <td>20</td>
+                <td>대한민국</td>
+                <td>남</td>
+                <td>000101-3xxxxxx</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td> - </td>
+            <td>20</td>
+            <td> - </td>
+            <td>남</td>
+            <td> - </td>
+            <td> - </td>
+        </tfoot>        
+            
+    </table>
+</body>
+</html>

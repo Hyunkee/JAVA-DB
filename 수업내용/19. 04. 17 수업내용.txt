@@ -1,0 +1,12 @@
+컬렉션 프레임웍 - 편리하게
+ - 데이터들을 효율적으로 관리하기위해 표준화 시킨것
+ - list, set, map
+ - 컬렉션 : list와 set - value값 하나를 이용
+ - list : 중복 o => 순서 o
+ - set : 중복 x => 순서 x
+ - map : <key, value> 값 두개를 이용
+            key - 중복 x, value - 중복 o
+            key 값이 중복되었을 때 value 값을 덮어쓴다
+ - stack, queue, tree, ... : list를 이용해 자료구조를 구현
+ - ArrayList : 배열로 이루어진 리스트
+ - LinkedList : 삽입삭제가 빠르다

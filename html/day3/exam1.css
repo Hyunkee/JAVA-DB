@@ -1,0 +1,15 @@
+.container{
+    height:500px;
+    margin:50px 0 0;
+    border:1px solid black;
+    position: relative;
+}
+.abs-box{
+    position: absolute;
+    height: 100px;
+    border: 1px solid black;
+    width: 100px;
+    top: 10px;
+    left: 10px;
+    
+}

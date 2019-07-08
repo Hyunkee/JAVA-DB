@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('li').mouseover(function(){
+                $(this).addClass('bg-blue');
+                $(this).siblings().removeClass('bg-blue');
+            })
+            $('li').mouseout(function(){
+                $(this).removeClass('bg-blue');
+            });
+        })
+    </script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            display: block;
+            list-style: none;
+            width: 100px;
+            height: 40px;
+            float: left;
+            text-align: center;
+            cursor: pointer;
+            line-height: 35px;
+        }
+        .bg-blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+</body>
+</html>

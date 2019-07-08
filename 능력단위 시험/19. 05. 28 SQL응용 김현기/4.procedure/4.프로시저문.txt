@@ -1,0 +1,13 @@
+DROP PROCEDURE IF EXISTS classjoin;
+DELIMITER // 
+CREATE PROCEDURE search_user() 
+BEGIN 
+	select subject_title,professor_name,class_room
+    from class
+    join subject
+    on class_subject_code = subject_code
+    join professor
+    on class_professor_num = professor_num;
+END // 
+DELIMITER ;
+show procedure status;

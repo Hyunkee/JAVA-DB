@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .some{
+            margin-left: 10px;
+            width:35px;
+        }
+    </style>
+</head>
+<body>
+    <p>주문 메뉴</p>
+    <input type="checkbox" value="짜장면" name="" id="" class="checkbox" 
+    onchange="updateOrderList(this.checked,this.value)">짜장면
+    <input type="number" min="1" value="1" class="some" >개<br />
+    <input type="checkbox" value="짬뽕" name="" id="" class="checkbox" 
+    onchange="updateOrderList(this.checked,this.value)">짬뽕&nbsp;&nbsp;&nbsp;
+    <input type="number" min="1" value="1" class="some">개<br /> 
+    <input type="checkbox" value="우동" name="" id="" class="checkbox" 
+    onchange="updateOrderList(this.checked,this.value)">우동&nbsp;&nbsp;&nbsp;
+    <input type="number" min="1" value="1" class="some">개<br /> 
+    <input type="checkbox" value="탕수육" name="" id="" class="checkbox" 
+    onchange="updateOrderList(this.checked,this.value)">탕수육
+    <input type="number" min="1" value="1" class="some">개<br /> 
+    <input type="checkbox" value="볶음밥" name="" id="" class="checkbox" 
+    onchange="updateOrderList(this.checked,this.value)">볶음밥
+    <input type="number" min="1" value="1" class="some">개<br />     
+    <button onclick="order1()">주문</button>
+    <script>
+        
+        var list = [];
+        // 전역 배열 list에 메뉴를 추가하거나 삭제하는 함수
+        // 해당 메뉴의 체크여부와 메뉴가 매개변수로 필요
+        function updateOrderList(isChecked, menu){            
+            // 메뉴가 선택되면 리스트에 추가
+            if(isChecked){
+                list.push(menu);
+                //alert('['+menu+']'+'추가되었습니다.');
+            // 메뉴가 해제되면 리스트에 제거
+            }else{
+                // 제거 할 메뉴가 몇번지에 있는지 검색
+                // indexOf 함수는 리스트에 menu 원소가 있는지 없는지 검색해서 있으면 해당 번지를(0이상) 없으면 -1를 리턴하는 함수
+                var index = list.indexOf(menu);
+                // 제거 할 메뉴가 리스트에 있으면
+                // index가 0보다 크거나 같다는 의미는 list에 menu가 있다는 의미이다.
+                if(index >= 0)
+                    // 메뉴가 리스트에 있기때문에 해당 메뉴가 있는 위치(번지)부터 1개를 제거한다.
+                    list.splice(index,1);
+                    //alert('['+menu+']'+'취소되었습니다.');
+            }
+        }
+        // 방법1
+          
+        function order1(){
+            var checkList = document.getElementsByClassName('checkbox');
+            var someList = document.getElementsByClassName('some'); 
+            var orderList1 = [];            
+            for(var i = 0; i<checkList.length; i++){
+                if(checkList[i].checked)                
+                    orderList1.push(checkList[i].value+' : '+someList[i].value+'개');                    
+            }
+            if(orderList1.length != 0)     
+                alert('주문 내역 : ' + orderList1);            
+            else
+                alert('주문 내역이 없습니다.')
+        }
+        // 방법2
+        
+        function order2(){            
+            var orderList2 = [];
+            if(list.length != 0)
+                orderList2.push(list);
+            else{
+                orderList2 = '';
+            }
+            alert('주문내역 : ' + orderList2);
+        }
+        // 방법3
+        function order3(){
+             if(list.length != 0)
+                 alert('주문내역 : ' + list.join(','));
+             else
+                 alert('주문내역이 없습니다.');
+        }    
+    </script>
+</body>
+</html>

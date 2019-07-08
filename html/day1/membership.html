@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+</head>
+<body>
+        <!-- 회원 가입 화면을 구성하세요.
+        회원 가입 화면에는 아이디, 비밀번호, 성별, 이메일을 입력해야한다. -->
+    <h1>GREEN</h1 >
+    <form action="/test" method="GET">
+        <div class="id" >
+            <p>아이디</p>
+            <input type="text" name="아이디" id="" placeholder="아이디를 입력하세요" required> <!-- required -> 필수 항목 설정하는 명령어-->
+        </div>
+        <div class="pw">
+            <p>비밀번호</p>
+            <input type="password" name="비밀번호" id="" required>
+            <p>비밀번호 재확인</p>
+            <input type="password" name="비밀번호 재확인" id="">
+        </div>
+        <div class="name">
+            <p>이름</p>
+            <input type="text" name="이름" id="">
+        </div>
+        <div class="brith-day">
+            <p>생년월일</p>
+            <input type="month" name="생년월일" id="">
+        </div>
+        <div class="gender">
+            <p>성별</p>
+            <input type="radio" name="gender" id="male" checked value="male">
+            <label for="male">남자</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">여자</label>
+        </div>
+        <div class="e-mail">
+            <p>이메일</p>
+            <input type="email" name="" id="">
+        </div>
+        <div class="phone-number">
+            <p>전화번호</p>
+            <input type="text" name="id" id=""><input type="button" value="인증번호 받기">
+            <input type="text" name="id" id="" placeholder="인증번호를 입력하세요">
+        </div>
+        <div class="">
+            <input type="submit" value="전송">  <input type="reset" value="리셋">
+        </div>
+    </form>
+
+</body>
+</html>

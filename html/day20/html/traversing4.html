@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 방법1
+            // $('div').mouseover(function(){
+            //     $(this).siblings().addClass('blue');                
+            // })
+            // $('div').mouseout(function(){                
+            //     $('div').removeClass('blue');
+            // })
+            // 방법2
+            $('div').hover(function(){                
+                $(this).siblings().toggleClass('blue');
+            })
+        });
+    </script>
+    <style>
+        *{
+            margin :0;
+            padding: 0;
+        }
+        div{
+            height: 50px;
+            border-bottom: 1px solid black;
+            text-align: center;
+            line-height: 50px;
+        }
+        .blue{
+            background-color: blue;
+            color : white;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>

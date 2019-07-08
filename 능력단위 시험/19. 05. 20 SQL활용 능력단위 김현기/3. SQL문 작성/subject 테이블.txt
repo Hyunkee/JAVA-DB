@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS `sql`.`subject`;
+CREATE TABLE `sql`.`subject` (
+  	`subject_code` VARCHAR(6) NOT NULL,
+ 	 `subject_tile` VARCHAR(45) NULL,
+ 	 `subject_point` INT NOT NULL DEFAULT '0',
+ 	 `subject_time` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`subject_code`))
+
+

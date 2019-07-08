@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" href="reactive.css">	
+	<title>Document</title>
+	<style>		
+		.display-none{
+			display: none;
+		}
+		.display-block{
+			display: block;
+		}		
+		.box{
+			width: 100%;
+			height: 30px;
+			border: 2px solid blue;
+			text-align: right;
+			background-color: white;
+			z-index: 99;
+		}
+		.ico_close{		
+			display: block;	
+			width: 17px;
+			height: 17px;
+			background-position: -191px -257px;
+			background-image: url(https://s.pstatic.net/static/www/img/2018/sp_themecast_v180607.png);
+			background-repeat: no-repeat;
+			z-index: 100;
+		}		
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="nav">
+			<button onclick="display('i')"><i class="fas fa-bars display-block" id="i" ></i></button>			
+			<div class="box display-none" ><button><span class="ico_close" onclick="display('close')" id="close"></span></button></div>
+		</div>
+	</div>
+	<script>
+		 function display(id){           
+            document.getElementById(id).classList.remove('display-block');           
+			document.getElementById(id).classList.add('display-none');            			
+			document.getElementsByClassName('box')[0].classList.add('display-block');
+			document.getElementsByClassName('box')[0].classList.remove('display-none');
+		}
+		function ico_close(id){
+			document.getElementsByClassName('box')[0].classList.add('display-none');
+			document.getElementsByClassName('box')[0].classList.remove('display-block');
+			document.getElementById(id).classList.remove('display-none');           
+			document.getElementById(id).classList.add('display-block'); 		
+		}
+	</script>
+</body>
+</html>

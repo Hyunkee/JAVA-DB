@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("안녕하세요");// 문장 끝의 세미콜론은 필수는 아니지만 습관적으로 써주는게 좋다.
+        console.log('안녕하세요');
+        var tmp;
+        console.log(typeof tmp);
+        tmp = 10;
+        console.log(typeof tmp);
+        tmp = "안녕";
+        console.log(typeof tmp);
+        var tmp = 10;
+        console.log(typeof tmp);
+        tmp = [1,'2',"3"]; // 배열에 문자와 정수를 섞어 쓸 수 있다.
+        console.log(typeof tmp);
+        tmp = new Array(10);
+        console.log(typeof tmp);
+        tmp = 10;
+        if(tmp >10){
+            console.log('tmp는 10보다 큽니다.');
+        }else{
+            console.log('tmp는 10보다 작거나 같습니다.');
+        }
+        if( 1 == "1"){ // == 값만 확인한다.
+            console.log("문자열 1과 숫자1은 값이 같습니다.");
+        }else{
+            console.log("문자열 1과 숫자1은 값이 다릅니다.");
+        }
+        if( 1 === "1"){ // === 값뿐만이 아니라 자료형도 비교 확인한다.
+            console.log("문자열 1과 숫자1은 값과 자료형이 같습니다.");
+        }else{
+            console.log("문자열 1과 숫자1은 값은 같지만 자료형은 다릅니다.");
+        }
+        // != 값이 다를떄, !== 값과 자료형이 다를때
+        // 문자열 비교 예제
+        console.log("문자열 비교 예제");
+        console.log("B">"A"); // true, 알파벳은 알파벳순으로 크다 ex) B>A
+        console.log("Ba">"Ab"); // true, 문자열을 하나씩 비교를 한다
+        console.log("AB">"ABC"); // false, 앞부분이 같고 문자열의 길이가 다르면 긴쪽이 크다.
+        console.log("ABCDE">"D"); //false, 이 예제로 문자열은 하나씩 비교한다는 것을 알 수 있다.
+        console.log("1"<"3"); // true
+        console.log("13"<"3"); // true
+        console.log("문자열로 이루어진 숫자(string)와 순수 숫자(number) 비교");
+        console.log(13 <"3"); // false
+        console.log(13 <"3a"); // false
+        console.log("1" < "a"); // true
+        console.log(13 < "a3"); // false        
+        console.log(parseInt('3a')); // 3
+        var num = "123";
+        var iNum = parseInt(num);
+        if(isNaN(iNum)){
+            console.log(num+'은 정수로 변환이 불가능하여 100과 비교할 수 없습니다.')
+        }
+        else if(100 < parseInt(num)){
+            console.log(iNum+'은 100보다 큽니다.');
+        }
+        console.log('숫자 123의 isNaN : ' + isNaN(123)); // isNaN : 해당하는 값이 숫자가아니면 true, 숫자이면 false
+        console.log('문자열 a123의 isNaN : ' + isNaN('a123'));
+        var inf = 1/0;
+        console.log(inf); // 무한대는 infinity값이 저장된다.
+        console.log(isFinite(inf)); // false, isFinite : 해당 하는 값이 유한수가 맞으면 true, 무한수이면 false
+        num = 16; // 10진수 16
+        console.log(num);
+        num = 0x16; // 16진수 16 = 16x1 + 1x6 = 22
+        console.log(num);
+        num = 016; // 8진수 16 = 8x1 + 1x6 = 14
+        console.log(num);
+        num = 1e6; // 1x10의 6제곱 = 1000000
+        console.log(num);
+        num = 1e-6; // 1x10의 -6제곱 = 0.000001
+        console.log(num);
+        var tmp2;
+        console.log(typeof tmp2);
+        var tmp3 = null;
+        console.log(typeof tmp3); // null의 자료형은 object 이다.
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.bg-red{	background-color: red;}
+.bg-blue{	background-color: blue;}
+.bg-yellow{	background-color: yellow;}
+.bg-gray{	background-color: gray;}
+.box{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border: 1px solid black;
+}
+.display-none{
+    display: none;
+}

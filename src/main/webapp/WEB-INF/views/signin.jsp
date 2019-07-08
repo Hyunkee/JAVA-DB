@@ -26,11 +26,12 @@
 		color: red;
 	}
 	</style>
+
 </head>
 <body>
 	<div class="offset-4 col-4 border border-dark mt-5">
 		<h1 class="text-center">로그인</h1>
-		<form action="" method="post">
+		<form action="" method="post" >
 			<div class="row">
 				<label class="col-4">아이디</label>
 				<input type="text"class="form-control col-7" placeholder="아이디" name="id">
@@ -40,7 +41,7 @@
 				<input type="password"class="form-control col-7" placeholder="비밀번호" name="pw">
 			</div>
 			<div class="offset-8 col-3 clearfix p-0">
-				<button class="btn btn-primary float-right">로그인</button>
+				<button class="btn btn-primary float-right" >로그인</button>
 			</div>
 		</form>	
 	</div>

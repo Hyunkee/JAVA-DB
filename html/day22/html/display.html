@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            var num = 0;           
+            $('.display').click(function(){  
+                if(num == 0){
+                    $('p').attr('style','display:none');;
+                    num++;
+                }else if(num ==1){
+                    $('p').attr('style','display:block');;
+                    num--;
+                }                                    
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <button class="display">버튼</button>
+    <p style="display:block">디스플레이 none</p>
+</body>
+</html>

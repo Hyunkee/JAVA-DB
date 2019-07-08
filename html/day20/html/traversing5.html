@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            // div 요소들 중에서 첫번째 요소에 blue 클래스 추가
+            // $('div').first().addClass('blue');
+            // div 요소들 중에서 마지막 요소에 blue 클래스 추가
+            // $('div').last().addClass('blue');
+            // div 요소들 중에서 2번지 요소(3번째)에 blue 클래스 추가
+            // $('div').eq(2).addClass('blue');
+            // div#one 요소에 ble 클래스 추가
+            // div 요소들 중에서 id가 one인 요소의 blue 클래스 추가
+            // $('div').filter('#one').addClass('blue');
+            // $('div#one').addClass('blue'); 위와 같은식
+            // div 요소들 중에서 id가 one인 요소를 제외한 나머지 요소들에게 blue 클래스 추가
+            // $('div').not('#one').addClass('blue');
+            // div 요소의 부모가 body태그인지에 대한 true or false를 메세지창으로 출력
+            // alert($('div').parent().is('body'));
+            // $().val() : 태그의 value값을 가져옴
+            // $().val(값) : 태그의 value값을 설정함
+            // $().text() : 요소의 텍스트를 가져옴
+            // $().text(문자열) : 요소에 텍스트를 씀(설정함)
+            // $().html() : 요소의 html 코드를 가져옴
+            // $().html(문자열) : 요소에 html 코드를 씀(설정함)
+            console.log($('#one').text());
+            console.log($('#one').html());
+            var htmlStr = $('#one').html();
+            htmlStr = '<span>1-1</span>' + htmlStr + '<span>1-2</span>'
+            $('#one').html(htmlStr);
+        });
+    </script>
+    <style>
+        *{
+            margin :0;
+            padding: 0;
+        }
+        div{
+            height: 50px;
+            border-bottom: 1px solid black;
+            text-align: center;
+            line-height: 50px;
+        }
+        .blue{
+            background-color: blue;
+            color : white;
+        }
+    </style>
+</head>
+<body>
+    <div id="one"><span>1</span></div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>

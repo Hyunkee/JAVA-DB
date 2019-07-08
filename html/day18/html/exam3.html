@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="../css/exam3.css">
+    <script>
+        $(document).ready(function(){
+            $('input[type=checkbox]').change(function(){
+                if($(this).prop('checked')){// prop : checked의 현재 값을 출력 true or false               
+                    //alert('체크 되었습니다.')
+                    console.log('체크')
+                    var cnt = $(this).val();
+                    $('input[type=checkbox]').each(function(){ // each : 반복문 역할을 함.
+                        if($(this == $('input[type=checkbox]').eq(cnt-1))){
+                            $('.box').eq(cnt-1).addClass('display-none');
+                        }                                                                 
+                    });
+                }else{
+                        //alert('체크 해제 되었습니다.')                    
+                        console.log('해제');
+                        var cnt = $(this).val();
+                        $('input[type=checkbox]').each(function(){ // each : 반복문 역할을 함.
+                            if($(this == $('input[type=checkbox]').eq(cnt-1))){
+                                $('.box').eq(cnt-1).removeClass('display-none');
+                            }                                                                                         
+                        });
+                    }
+            });
+            // $().이벤트함수명();
+            // $().이벤트함수명(function(){
+
+            // });
+            // $().prop('속성명'); // 해당 속성 값을 가져옴
+            // $().prop('속성명','값'); // 해당 속성을 값으로 설정
+            // var cnt = 0;
+            // $('input[type=checkbox]').each(function(){ // each : 반복문 역할을 함.
+            //     cnt++;
+            //     if($(this == 1)){
+            //         $('.box').eq(0).addClass('display-none');
+            //     }
+            //     if($(this == 2)){
+            //         $('.box').eq(1).addClass('display-none');
+            //     }                  
+            // });
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div><br />
+    <input type="checkbox" value="1">
+    <input type="checkbox" value="2">
+    <input type="checkbox" value="3">
+</body>
+</html>
