@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `tottenham` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
-USE `tottenham`;
+CREATE DATABASE  IF NOT EXISTS `university` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+USE `university`;
 -- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
--- Host: localhost    Database: tottenham
+-- Host: localhost    Database: university
 -- ------------------------------------------------------
 -- Server version	8.0.15
 
@@ -18,27 +18,34 @@ USE `tottenham`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `staff`
+-- Table structure for table `board`
 --
 
-DROP TABLE IF EXISTS `staff`;
+DROP TABLE IF EXISTS `board`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `staff` (
-  `staff_num` int(11) NOT NULL AUTO_INCREMENT,
-  `staff_name` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`staff_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+CREATE TABLE `board` (
+  `num` int(11) NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `contents` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `writer` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `registered` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `file` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `views` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`num`),
+  KEY `writer_idx` (`writer`),
+  CONSTRAINT `writer` FOREIGN KEY (`writer`) REFERENCES `member` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `staff`
+-- Dumping data for table `board`
 --
 
-LOCK TABLES `staff` WRITE;
-/*!40000 ALTER TABLE `staff` DISABLE KEYS */;
-INSERT INTO `staff` VALUES (1,'Jesus Perez'),(2,'Peter Krawietz');
-/*!40000 ALTER TABLE `staff` ENABLE KEYS */;
+LOCK TABLES `board` WRITE;
+/*!40000 ALTER TABLE `board` DISABLE KEYS */;
+INSERT INTO `board` VALUES (1,'공지','공지','123456789','2019-07-08 10:40:02',NULL,0),(2,'게시글입니다','게시글','123456789','2019-07-08 14:41:37',NULL,0);
+/*!40000 ALTER TABLE `board` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-03 17:10:43
+-- Dump completed on 2019-07-08 16:54:37

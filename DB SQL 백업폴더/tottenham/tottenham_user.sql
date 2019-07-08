@@ -18,37 +18,30 @@ USE `tottenham`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `team`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `team`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `team` (
-  `team_num` int(11) NOT NULL AUTO_INCREMENT,
-  `team_name` varchar(45) DEFAULT NULL,
-  `team_stadium_num` int(11) DEFAULT NULL,
-  `team_manager_num` int(11) DEFAULT NULL,
-  `team_staff_num` int(11) DEFAULT NULL,
-  `team_hometown` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`team_num`),
-  KEY `team_stadium_num_idx` (`team_stadium_num`),
-  KEY `team_manager_num_idx` (`team_manager_num`),
-  KEY `team_staff_num_idx` (`team_staff_num`),
-  CONSTRAINT `team_manager_num` FOREIGN KEY (`team_manager_num`) REFERENCES `manager` (`manager_num`),
-  CONSTRAINT `team_stadium_num` FOREIGN KEY (`team_stadium_num`) REFERENCES `stadium` (`stadium_num`),
-  CONSTRAINT `team_staff_num` FOREIGN KEY (`team_staff_num`) REFERENCES `staff` (`staff_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+CREATE TABLE `user` (
+  `id` varchar(45) NOT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `nickname` varchar(45) DEFAULT NULL,
+  `phone` varchar(45) DEFAULT NULL,
+  `add` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `team`
+-- Dumping data for table `user`
 --
 
-LOCK TABLES `team` WRITE;
-/*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` VALUES (1,'Tottenham Hotspur',1,1,1,'England London South Tottenham'),(2,'Liverpool FC',2,2,2,'England Mergeside Liverpool'),(3,'Manchester City',3,1,1,'England Grate Manchester'),(4,'Chelsea',4,1,2,'England London'),(5,'Arsenal',5,2,1,'England London'),(6,'Manchester Utd',6,2,1,'England Grate Manchester');
-/*!40000 ALTER TABLE `team` ENABLE KEYS */;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('khk2909','gusrl33','hk','01023456789','cheongju'),('lkokvke33','gusrl33','hyunkee','01012345678','cheongju');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -60,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-03 17:10:42
+-- Dump completed on 2019-07-08 16:54:39

@@ -18,30 +18,39 @@ USE `university`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `subject`
+-- Table structure for table `course`
 --
 
-DROP TABLE IF EXISTS `subject`;
+DROP TABLE IF EXISTS `course`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `subject` (
-  `subject_code` varchar(45) NOT NULL DEFAULT '',
-  `subject_title` varchar(45) NOT NULL DEFAULT '',
-  `subject_point` int(11) NOT NULL,
-  `subject_time` int(11) NOT NULL,
-  `subject_type` varchar(45) NOT NULL DEFAULT '',
-  PRIMARY KEY (`subject_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `course` (
+  `course_num` int(11) NOT NULL AUTO_INCREMENT,
+  `course_student_num` int(11) DEFAULT NULL,
+  `course_class_num` int(11) DEFAULT NULL,
+  `course_mid` double NOT NULL,
+  `course_end` double NOT NULL,
+  `course_attendance` int(11) DEFAULT NULL,
+  `course_report` varchar(45) NOT NULL DEFAULT '',
+  `course_total` int(11) DEFAULT NULL,
+  `course_rating` varchar(45) NOT NULL DEFAULT '',
+  `course_grade` varchar(2) NOT NULL DEFAULT 'F',
+  PRIMARY KEY (`course_num`),
+  KEY `course_student_num_idx` (`course_student_num`),
+  KEY `course_class_num_idx` (`course_class_num`),
+  CONSTRAINT `course_class_num` FOREIGN KEY (`course_class_num`) REFERENCES `class` (`class_num`),
+  CONSTRAINT `course_student_num` FOREIGN KEY (`course_student_num`) REFERENCES `student` (`student_num`)
+) ENGINE=InnoDB AUTO_INCREMENT=20190431 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `subject`
+-- Dumping data for table `course`
 --
 
-LOCK TABLES `subject` WRITE;
-/*!40000 ALTER TABLE `subject` DISABLE KEYS */;
-INSERT INTO `subject` VALUES ('MSC001','컴퓨터',3,50,'전공필수'),('MSC002','경영',3,60,'전공필수'),('MSC003','사회',4,50,'부전공');
-/*!40000 ALTER TABLE `subject` ENABLE KEYS */;
+LOCK TABLES `course` WRITE;
+/*!40000 ALTER TABLE `course` DISABLE KEYS */;
+INSERT INTO `course` VALUES (1,2019160160,1,40,40,10,'10',100,'','A+'),(2,2019160160,2,40,40,10,'10',100,'','A+'),(3,2019160160,3,70,80,80,'90',101,'','F'),(4,2019170170,2,3,4,0,'0',NULL,'','F'),(5,2019170170,1,4,3,0,'0',NULL,'','F'),(6,2019180180,2,2,5,0,'0',NULL,'','F');
+/*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-03 17:10:42
+-- Dump completed on 2019-07-08 16:54:37

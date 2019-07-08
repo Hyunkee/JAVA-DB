@@ -32,6 +32,7 @@ CREATE TABLE `player` (
   `player_position` varchar(45) DEFAULT NULL,
   `player_weight` varchar(45) DEFAULT NULL,
   `player_height` varchar(45) DEFAULT NULL,
+  `player_goals` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`player_num`),
   KEY `player_team_num_idx` (`player_team_num`),
   CONSTRAINT `player_team_num` FOREIGN KEY (`player_team_num`) REFERENCES `team` (`team_num`)
@@ -44,7 +45,7 @@ CREATE TABLE `player` (
 
 LOCK TABLES `player` WRITE;
 /*!40000 ALTER TABLE `player` DISABLE KEYS */;
-INSERT INTO `player` VALUES (1,1,'Hugo Lloris','34','Goalkeeper','188cm','82kg'),(2,1,'Kieran Trippier','30','Right Back','178cm','71.5kg'),(3,1,'Danny Rose','30','Left Back','174cm','76kg'),(4,1,'Toby Alderweireld','31','Center Back','187cm','90.5kg'),(5,1,'Jan Vertonghen','33','Center Back','189cm','87.5kg'),(6,1,'Davinson Sanchez','24','Center Back','187cm','81kg'),(7,1,'Heung-Min Son','28','Left Wing','183cm','77kg'),(8,1,'Harry Winks',NULL,NULL,NULL,NULL),(9,1,'Vincent Janssen',NULL,NULL,NULL,NULL),(10,1,'Harry Kane',NULL,NULL,NULL,NULL),(11,1,'Erik Lamela',NULL,NULL,NULL,NULL),(12,1,'Victor Wanyama',NULL,NULL,NULL,NULL),(13,1,'Michel Vorm',NULL,NULL,NULL,NULL),(14,1,'Georges-Kevin Nkoudou',NULL,NULL,NULL,NULL),(15,1,'Eric Dier',NULL,NULL,NULL,NULL),(16,1,'Kyle Walker-peters',NULL,NULL,NULL,NULL),(17,1,'Moussa Sissoko',NULL,NULL,NULL,NULL),(18,1,'Fernando Llorente',NULL,NULL,NULL,NULL),(20,1,'Dele Alli',NULL,NULL,NULL,NULL),(21,1,'Juan Foyth',NULL,NULL,NULL,NULL),(22,1,'Paulo Gazzaniga',NULL,NULL,NULL,NULL),(23,1,'Christian Eriksen',NULL,NULL,NULL,NULL);
+INSERT INTO `player` VALUES (1,1,'Hugo Lloris','34','Goalkeeper','188cm','82kg','1'),(2,1,'Kieran Trippier','30','Right Back','178cm','71.5kg','1'),(3,1,'Danny Rose','30','Left Back','174cm','76kg','2'),(4,1,'Toby Alderweireld','31','Center Back','187cm','90.5kg','4'),(5,1,'Jan Vertonghen','33','Center Back','189cm','87.5kg','4'),(6,1,'Davinson Sanchez','24','Center Back','187cm','81kg','2'),(7,1,'Heung-Min Son','28','Left Wing','183cm','77kg','3'),(8,1,'Harry Winks',NULL,NULL,NULL,NULL,'1'),(9,1,'Vincent Janssen',NULL,NULL,NULL,NULL,'2'),(10,1,'Harry Kane',NULL,NULL,NULL,NULL,'1'),(11,1,'Erik Lamela',NULL,NULL,NULL,NULL,NULL),(12,1,'Victor Wanyama',NULL,NULL,NULL,NULL,NULL),(13,1,'Michel Vorm',NULL,NULL,NULL,NULL,NULL),(14,1,'Georges-Kevin Nkoudou',NULL,NULL,NULL,NULL,'1'),(15,1,'Eric Dier',NULL,NULL,NULL,NULL,NULL),(16,1,'Kyle Walker-peters',NULL,NULL,NULL,NULL,NULL),(17,1,'Moussa Sissoko',NULL,NULL,NULL,NULL,'1'),(18,1,'Fernando Llorente',NULL,NULL,NULL,NULL,'1'),(20,1,'Dele Alli',NULL,NULL,NULL,NULL,'1'),(21,1,'Juan Foyth',NULL,NULL,NULL,NULL,'1'),(22,1,'Paulo Gazzaniga',NULL,NULL,NULL,NULL,NULL),(23,1,'Christian Eriksen',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `player` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-03 17:10:42
+-- Dump completed on 2019-07-08 16:54:39

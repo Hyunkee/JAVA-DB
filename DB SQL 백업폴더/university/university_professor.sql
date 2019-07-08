@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `tottenham` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
-USE `tottenham`;
+CREATE DATABASE  IF NOT EXISTS `university` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+USE `university`;
 -- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
--- Host: localhost    Database: tottenham
+-- Host: localhost    Database: university
 -- ------------------------------------------------------
 -- Server version	8.0.15
 
@@ -18,30 +18,31 @@ USE `tottenham`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `professor`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `professor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `user` (
-  `id` varchar(45) NOT NULL,
-  `password` varchar(45) DEFAULT NULL,
-  `nickname` varchar(45) DEFAULT NULL,
-  `phone` varchar(45) DEFAULT NULL,
-  `add` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `professor` (
+  `professor_num` int(11) NOT NULL AUTO_INCREMENT,
+  `professor_name` varchar(45) NOT NULL DEFAULT '',
+  `professor_phone` varchar(45) NOT NULL DEFAULT '',
+  `professor_room` varchar(45) NOT NULL DEFAULT '',
+  `professor_major` varchar(45) NOT NULL DEFAULT '',
+  `professor_age` int(11) DEFAULT NULL,
+  PRIMARY KEY (`professor_num`)
+) ENGINE=InnoDB AUTO_INCREMENT=2001135005 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `professor`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('khk2909','gusrl33','hk','01023456789','cheongju'),('lkokvke33','gusrl33','hyunkee','01012345678','cheongju');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `professor` WRITE;
+/*!40000 ALTER TABLE `professor` DISABLE KEYS */;
+INSERT INTO `professor` VALUES (2001135001,'유관순','01012345678','123호','컴퓨터',45),(2001135002,'이순신','12345678901','124호','사회',47);
+/*!40000 ALTER TABLE `professor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-03 17:10:42
+-- Dump completed on 2019-07-08 16:54:37

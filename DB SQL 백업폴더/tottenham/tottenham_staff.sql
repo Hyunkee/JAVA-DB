@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `university` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
-USE `university`;
+CREATE DATABASE  IF NOT EXISTS `tottenham` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+USE `tottenham`;
 -- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
--- Host: localhost    Database: university
+-- Host: localhost    Database: tottenham
 -- ------------------------------------------------------
 -- Server version	8.0.15
 
@@ -18,32 +18,27 @@ USE `university`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `advise`
+-- Table structure for table `staff`
 --
 
-DROP TABLE IF EXISTS `advise`;
+DROP TABLE IF EXISTS `staff`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `advise` (
-  `advise_num` int(11) NOT NULL AUTO_INCREMENT,
-  `advise_professor_num` int(11) DEFAULT NULL,
-  `advise_student_num` int(11) DEFAULT NULL,
-  PRIMARY KEY (`advise_num`),
-  KEY `advise_professor_num_idx` (`advise_professor_num`),
-  KEY `advise_student_num_idx` (`advise_student_num`),
-  CONSTRAINT `advise_professor_num` FOREIGN KEY (`advise_professor_num`) REFERENCES `professor` (`professor_num`),
-  CONSTRAINT `advise_student_num` FOREIGN KEY (`advise_student_num`) REFERENCES `student` (`student_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+CREATE TABLE `staff` (
+  `staff_num` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`staff_num`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `advise`
+-- Dumping data for table `staff`
 --
 
-LOCK TABLES `advise` WRITE;
-/*!40000 ALTER TABLE `advise` DISABLE KEYS */;
-INSERT INTO `advise` VALUES (1,2001135001,2019160160),(2,2001135002,2019160160),(6,2001135001,2019135135),(7,2001135001,2019170170);
-/*!40000 ALTER TABLE `advise` ENABLE KEYS */;
+LOCK TABLES `staff` WRITE;
+/*!40000 ALTER TABLE `staff` DISABLE KEYS */;
+INSERT INTO `staff` VALUES (1,'Jesus Perez'),(2,'Peter Krawietz');
+/*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-03 17:10:41
+-- Dump completed on 2019-07-08 16:54:40

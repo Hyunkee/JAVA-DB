@@ -18,31 +18,30 @@ USE `university`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `professor`
+-- Table structure for table `subject`
 --
 
-DROP TABLE IF EXISTS `professor`;
+DROP TABLE IF EXISTS `subject`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `professor` (
-  `professor_num` int(11) NOT NULL AUTO_INCREMENT,
-  `professor_name` varchar(45) NOT NULL DEFAULT '',
-  `professor_phone` varchar(45) NOT NULL DEFAULT '',
-  `professor_room` varchar(45) NOT NULL DEFAULT '',
-  `professor_major` varchar(45) NOT NULL DEFAULT '',
-  `professor_age` int(11) DEFAULT NULL,
-  PRIMARY KEY (`professor_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=2001135005 DEFAULT CHARSET=utf8;
+CREATE TABLE `subject` (
+  `subject_code` varchar(45) NOT NULL DEFAULT '',
+  `subject_title` varchar(45) NOT NULL DEFAULT '',
+  `subject_point` int(11) NOT NULL,
+  `subject_time` int(11) NOT NULL,
+  `subject_type` varchar(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`subject_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `professor`
+-- Dumping data for table `subject`
 --
 
-LOCK TABLES `professor` WRITE;
-/*!40000 ALTER TABLE `professor` DISABLE KEYS */;
-INSERT INTO `professor` VALUES (2001135001,'유관순','01012345678','123호','컴퓨터',45),(2001135002,'이순신','12345678901','124호','사회',47);
-/*!40000 ALTER TABLE `professor` ENABLE KEYS */;
+LOCK TABLES `subject` WRITE;
+/*!40000 ALTER TABLE `subject` DISABLE KEYS */;
+INSERT INTO `subject` VALUES ('MSC001','대학수학',3,50,'전공필수'),('MSC002','경영',3,60,'전공필수'),('MSC003','사회',4,50,'부전공');
+/*!40000 ALTER TABLE `subject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-03 17:10:40
+-- Dump completed on 2019-07-08 16:54:39

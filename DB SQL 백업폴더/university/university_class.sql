@@ -18,33 +18,36 @@ USE `university`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `student`
+-- Table structure for table `class`
 --
 
-DROP TABLE IF EXISTS `student`;
+DROP TABLE IF EXISTS `class`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `student` (
-  `student_num` int(11) NOT NULL AUTO_INCREMENT,
-  `student_name` varchar(45) NOT NULL DEFAULT '',
-  `student_age` int(11) DEFAULT NULL,
-  `student_grade` int(11) DEFAULT NULL,
-  `student_semester` varchar(45) NOT NULL DEFAULT '',
-  `student_adress` varchar(45) NOT NULL DEFAULT '',
-  `student_resident_num` varchar(45) NOT NULL,
-  `student_major` varchar(45) NOT NULL DEFAULT '',
-  PRIMARY KEY (`student_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=2019180181 DEFAULT CHARSET=utf8;
+CREATE TABLE `class` (
+  `class_num` int(11) NOT NULL AUTO_INCREMENT,
+  `class_subject_code` varchar(45) NOT NULL DEFAULT '',
+  `class_professor_num` int(11) DEFAULT NULL,
+  `class_room` varchar(45) NOT NULL DEFAULT '',
+  `class_schedule` varchar(45) NOT NULL DEFAULT '',
+  `class_year` int(11) DEFAULT NULL,
+  `class_semester` varchar(45) NOT NULL,
+  PRIMARY KEY (`class_num`),
+  KEY `class_subject_code_idx` (`class_subject_code`),
+  KEY `class_professor_num_idx` (`class_professor_num`),
+  CONSTRAINT `class_professor_num` FOREIGN KEY (`class_professor_num`) REFERENCES `professor` (`professor_num`),
+  CONSTRAINT `class_subject_code` FOREIGN KEY (`class_subject_code`) REFERENCES `subject` (`subject_code`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `student`
+-- Dumping data for table `class`
 --
 
-LOCK TABLES `student` WRITE;
-/*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (2019135135,'임꺽정',21,2,'1','청주','920801-2345678','사회'),(2019160160,'홍길동',20,1,'1','청주','920801-1234567','컴퓨터'),(2019170170,'김철수',22,3,'2','서울','920801-3456789','경영'),(2019180180,'이철수',23,2,'2','대전','920801-4567891','미술');
-/*!40000 ALTER TABLE `student` ENABLE KEYS */;
+LOCK TABLES `class` WRITE;
+/*!40000 ALTER TABLE `class` DISABLE KEYS */;
+INSERT INTO `class` VALUES (1,'MSC001',2001135001,'001호 강의실','월1,2 화1,2',2019,'1학기'),(2,'MSC002',2001135001,'002호 강의실','월3,4',2019,'1학기'),(3,'MSC003',2001135002,'003호 강의실','화3,4',2019,'1학기'),(4,'MSC002',2001135002,'003호 강의실','화2,3',2019,'1학기');
+/*!40000 ALTER TABLE `class` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -56,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-03 17:10:41
+-- Dump completed on 2019-07-08 16:54:38
