@@ -28,16 +28,16 @@ public class MemberServiceImp implements MemberService {
 	}
 
 	@Override
-	public boolean signin(MemberVO mVo) {
+	public MemberVO signin(MemberVO mVo) {
 		if(mVo == null)
-			return false; // 예외처리
+			return null; // 예외처리
 		MemberVO oVo = memberDao.getMember(mVo.getId()); //dao에게 id와 일치하는 회원 정보를 가져오게 시키고 저장한 후,
 		if(oVo == null)			
-			return false; // 가져오게 시키고 저장한 후, 저장된 회원 정보가 없으면(null) 컨트롤러에게 회원 아니라고 알려주고
+			return null; // 가져오게 시키고 저장한 후, 저장된 회원 정보가 없으면(null) 컨트롤러에게 회원 아니라고 알려주고
 		if(oVo.getPw().equals(mVo.getPw()))		
-			return true;//있으면 가져온 회원정보 비밀번호와 입력한
+			return oVo;//있으면 가져온 회원정보 비밀번호와 입력한
 						//회원정보 비밀번호를 비교하여 같으면 컨트롤러에게 회원이라고 알려주고, 다르면 아니라고 알려준다.		
-		return false;
+		return null;
 	}
 
 	@Override

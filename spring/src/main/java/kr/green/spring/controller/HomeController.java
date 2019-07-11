@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import kr.green.spring.service.LoginService;
+
 import kr.green.spring.service.MemberService;
 import kr.green.spring.vo.MemberVO;
 
@@ -23,10 +23,8 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@Autowired
-	MemberService memberService;
+	MemberService memberService;	
 	
-	@Autowired
-	LoginService loginService;
 	
 	
 	// 서버 부분을 제외한 URL이 "/" 이고, 방식이 GET이면 home 메소드를 실행
@@ -71,12 +69,12 @@ public class HomeController {
 		logger.info("로그인 진행중"); // 서버기록 관리하는 함수		
 		System.out.println(mVo);
 		//회원가입 진행되어야 함
-		if(memberService.signin(mVo))
+		MemberVO user = memberService.signin(mVo);
+		if(user != null) {
+			model.addAttribute("user",user);
 			return "redirect:/member";
-		else {
-			return "redirect:/signin";
 		}
-		
+		return "redirect:/signin";		
 	}
 	@RequestMapping(value = "/member", method = RequestMethod.GET)
 	public String memberGet(Model model) {
