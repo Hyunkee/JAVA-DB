@@ -1,0 +1,15 @@
+﻿메인에서 아이디와 비밀번호를 입력하여 /signin 로그인 시도 
+=> UnauthInterceptor가 실행(preHandle) => /signin이 있는 컨트롤러로 감 (post작동)
+=> LoginInterceptor가 실행(postHandle)(세션에 user 정보 저장) 
+=> /로 가야하는데 UnauthInterceptor의 preHandle이 실행 되고 이전과 달리 세션에
+user정보가 있기 때문에 컨트롤러로 가지 않고 /board/list로 가야함.
+=> AuthInterceptor의 preHandle이 실행되고 아무일도 안일어남
+=> RequestMapping이 /board/list인 컨트롤러의 메소드가 실행
+=> list.jsp가 화면에 출력
+
+
+로그인을 하지않고 URI에 /board/list를 입력하고 엔터를 쳤을 때 실행 순서 작성
+AuthInterceptor가 실행(preHandle) => 로그인이 안되있기 때문에 (user = null) /로 이동 
+ => UnauthInterceptor => 컨트롤러에 /로 이동 => jsp실행
+
+ 
