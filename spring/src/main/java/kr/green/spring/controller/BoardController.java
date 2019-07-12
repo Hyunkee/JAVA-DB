@@ -59,11 +59,7 @@ public class BoardController {
 	@RequestMapping(value="/delete", method=RequestMethod.GET)
 	public String displayDeleteGet() {
 		logger.info("게시판삭제 실행");		
-		return "/board/delete";
+		return "redirect:/board";
 	}
-	@RequestMapping(value="/delete", method=RequestMethod.POST)
-	public String displayDeletePost() {
-		logger.info("게시판삭제 진행");		
-		return "board";
-	}
+	
 }
