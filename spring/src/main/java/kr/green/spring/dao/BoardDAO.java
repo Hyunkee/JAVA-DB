@@ -14,6 +14,8 @@ public interface BoardDAO {
 
 	void updateBoard(BoardVO tmp);
 
+	ArrayList<BoardVO> deleteBoard();
+
 		
 
 }

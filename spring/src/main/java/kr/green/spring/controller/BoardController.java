@@ -57,9 +57,11 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	@RequestMapping(value="/delete", method=RequestMethod.GET)
-	public String displayDeleteGet() {
-		logger.info("게시판삭제 실행");		
-		return "redirect:/board";
+	public String displayDeleteGet(BoardVO tmp) {
+		logger.info("게시판삭제 실행");
+		System.out.println(tmp);
+		ArrayList<BoardVO> boardList = boardService.delete();
+		return "redirect:/board/list";
 	}
 	
 }

@@ -20,4 +20,7 @@
 			views = #{views}
 		where num = #{num}
 	</update>
+	<delete id="deleteBoard">
+		delete from board where num = #{num} 
+	</delete>
 </mapper>

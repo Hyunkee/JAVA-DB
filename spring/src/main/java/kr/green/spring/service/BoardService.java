@@ -14,6 +14,8 @@ public interface BoardService {
 
 	public boolean modify(BoardVO bVo);
 
+	ArrayList<BoardVO> delete();
+
 	
 	
 	
