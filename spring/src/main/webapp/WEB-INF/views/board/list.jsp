@@ -3,10 +3,17 @@
     pageEncoding="UTF-8"%>
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<jsp:include page="/WEB-INF/views/common/header.jsp"></jsp:include>		
 	<title>list</title>
+	<style>
+		h1{
+			margin: 20px 0 20px 0;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/views/common/nav.jsp"></jsp:include>
 	<h1>게시판</h1>
 	<table class="table">
 		<tr>
