@@ -41,4 +41,29 @@ public class BoardController {
 		model.addAttribute("board",bVo);		
 		return "/board/display";
 	}
+	
+	@RequestMapping(value="/modify", method=RequestMethod.GET)
+	public String displayModifyGet(Model model, Integer num) {
+		logger.info("게시판수정 실행");
+		BoardVO bVo = boardService.getBoard(num);
+		model.addAttribute("board",bVo);
+		return "/board/modify";
+	}
+	@RequestMapping(value="/modify", method=RequestMethod.POST)
+	public String displayModifyPost(BoardVO tmp) {
+		logger.info("게시판수정 진행");
+		System.out.println(tmp);
+		boardService.modify(tmp);		
+		return "redirect:/board/list";
+	}
+	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	public String displayDeleteGet() {
+		logger.info("게시판삭제 실행");		
+		return "/board/delete";
+	}
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public String displayDeletePost() {
+		logger.info("게시판삭제 진행");		
+		return "board";
+	}
 }
