@@ -44,8 +44,15 @@
 	</div>
 	<a href="<%=request.getContextPath()%>/board/list"><button type="button" class="btn btn-outline-primary">목록보기</button></a>	
 	
-	<a href="<%=request.getContextPath()%>/board/modify?num=${board.num}"><button type="button" class="btn btn-outline-primary">수정하기</button></a>
+	<c:if test="${user.id eq board.writer}">
+		<a href="<%=request.getContextPath()%>/board/modify?num=${board.num}"><button type="button" class="btn btn-outline-primary">수정하기</button></a>
+	</c:if>
 	
-	<a href="<%=request.getContextPath()%>/board/delete?num=${board.num}"><button type="button" class="btn btn-outline-primary">삭제하기</button></a>
+	<c:if test="${user.id eq board.writer}">
+		<a href="<%=request.getContextPath()%>/board/delete?num=${board.num}"><button type="button" class="btn btn-outline-primary">삭제하기</button></a>
+	</c:if>	
+	
+	<a href="<%=request.getContextPath()%>/board/insert"><button type="button" class="btn btn-outline-primary">등록하기</button></a>
+	
 </body>
 </html>
