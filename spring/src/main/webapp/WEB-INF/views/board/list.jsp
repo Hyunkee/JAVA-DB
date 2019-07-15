@@ -31,7 +31,8 @@
 			<th>${board.registered}</th>
 			<th>${board.views}</th>
 		</tr>
-		</c:forEach>
+		</c:forEach>		
 	</table>
+	<a href="<%=request.getContextPath()%>/board/insert"><button type="button" class="btn btn-outline-primary">등록하기</button></a>
 </body>
 </html>
