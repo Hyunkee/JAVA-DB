@@ -2,6 +2,8 @@ package kr.green.spring.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.green.spring.service.BoardService;
+import kr.green.spring.service.MemberService;
 import kr.green.spring.vo.BoardVO;
 
 @Controller // 컨트롤러 어노테이션으로 @Controller가 붙으면 컨트롤러로 인식 ,  없을땐 하나의 클래스로 인식한다.
@@ -20,13 +23,15 @@ public class BoardController {
 
 	@Autowired
 	BoardService boardService;
+	@Autowired
+	MemberService memberSerivce;
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)	
 	public String boardListGet(Model model) {
-		logger.info("게시판페이지 실행");
+		//logger.info("게시판페이지 실행");
 		ArrayList<BoardVO> boardList = boardService.getBoardList();
 		for(BoardVO tmp:boardList) {
-			System.out.println(tmp);
+			
 		}
 		model.addAttribute("list", boardList);
 		return "board/list";
@@ -34,34 +39,50 @@ public class BoardController {
 	
 	@RequestMapping(value="/display", method=RequestMethod.GET)	
 	public String boardDisplayGet(Model model, Integer num) {
-		logger.info("게시판화면 실행");
-		//조회수 증가
 		boardService.updateViews(num);
 		BoardVO bVo = boardService.getBoard(num);
+		System.out.println(bVo.getWriter());
 		model.addAttribute("board",bVo);		
 		return "/board/display";
 	}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.GET)
-	public String displayModifyGet(Model model, Integer num) {
-		logger.info("게시판수정 실행");
+	public String displayModifyGet(Model model, Integer num,HttpServletRequest r) {
+		//logger.info("게시판수정 실행");
 		BoardVO bVo = boardService.getBoard(num);
-		model.addAttribute("board",bVo);
-		return "/board/modify";
+		if(boardService.isWriter(num, r)) {
+			model.addAttribute("board",bVo);
+			return "/board/modify";
+		}		
+		return "redirect:/board/list";
+		
 	}
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	public String displayModifyPost(BoardVO tmp) {
-		logger.info("게시판수정 진행");
-		System.out.println(tmp);
+		//logger.info("게시판수정 진행");
+		
 		boardService.modify(tmp);		
 		return "redirect:/board/list";
 	}
 	@RequestMapping(value="/delete", method=RequestMethod.GET)
-	public String displayDeleteGet(BoardVO tmp) {
-		logger.info("게시판삭제 실행");
-		System.out.println(tmp);
-		ArrayList<BoardVO> boardList = boardService.delete();
+	public String displayDeleteGet(BoardVO boardVO, HttpServletRequest r,Integer num) {
+		//logger.info("게시판삭제 실행");		
+		//System.out.println(boardVO);
+		if(boardService.isWriter(num, r)) {
+			boardService.delete(boardVO);
+			return "redirect:/board/list";
+		}		
 		return "redirect:/board/list";
 	}
-	
+	@RequestMapping(value="/insert", method=RequestMethod.GET)
+	public String displayInsertGet() {
+		//logger.info("게시판등록 실행");		
+		return "/board/insert";
+	}
+	@RequestMapping(value="/insert", method=RequestMethod.POST)
+	public String displayInsertPost(BoardVO boardVO) {
+		//logger.info("게시판등록 진행중");		
+		boardService.insert(boardVO);
+		return "redirect:/board/list";
+	}
 }
