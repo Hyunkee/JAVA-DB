@@ -12,10 +12,9 @@ public interface BoardDAO {
 
 	void updateViews(Integer num);
 
-	void updateBoard(BoardVO tmp);
+	void updateBoard(BoardVO tmp);	
 
-	ArrayList<BoardVO> deleteBoard();
+	void insertBoard(BoardVO boardVO);
 
-		
-
+	void deleteBoard(BoardVO boardVO);
 }
