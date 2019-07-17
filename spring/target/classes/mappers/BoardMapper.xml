@@ -28,5 +28,5 @@
 	<insert id="insertBoard">
 		insert into board(title,contents,writer,file)
 		values(#{title},#{contents},#{writer},#{file})
-	</insert>
+	</insert>    
 </mapper>
