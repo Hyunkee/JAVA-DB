@@ -17,7 +17,7 @@
     </li>
     <li class="nav-item">
      	<c:if test="${user ne null}">	
-			<a class="nav-link text-white">로그인 되었습니다</a>
+			<a class="nav-link text-white" href="http://github.com/st8324" target="_blank">github</a>
 		</c:if>
     </li>
     <li class="nav-item" style="right:20px; position:absolute;">
