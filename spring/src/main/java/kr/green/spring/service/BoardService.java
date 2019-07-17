@@ -23,6 +23,7 @@ public interface BoardService {
 
 	boolean isWriter(Integer num, HttpServletRequest r);
 
+
 	
 
 	
