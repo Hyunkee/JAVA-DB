@@ -31,8 +31,43 @@
 			<th>${board.registered}</th>
 			<th>${board.views}</th>
 		</tr>
-		</c:forEach>		
+		</c:forEach>					
 	</table>
+	<ul class="pagination" style="justify-content: center;">
+	    <c:if test="${pageMaker.prev}">
+	        <li class="page-item">
+	            <a class="page-link" href="<%=request.getContextPath()%>/board/list?page=${pageMaker.startPage-1}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">Previous</a>
+	        </li>
+	    </c:if>
+	    <!-- c:forEach : 반복문과 같다. -->
+	    <c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage}" var="index">
+	    	<c:if test="${pageMaker.criteria.page eq index}"> 
+		        <li class="page-item active">
+		            <a class="page-link" href="<%=request.getContextPath()%>/board/list?page=${index}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">${index}</a>
+		        </li>
+	        </c:if>	        
+	        <c:if test="${pageMaker.criteria.page ne index}">
+		        <li class="page-item ">
+		            <a class="page-link" href="<%=request.getContextPath()%>/board/list?page=${index}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">${index}</a>
+		        </li>
+	        </c:if>
+	    </c:forEach>
+	    <c:if test="${pageMaker.next}">
+	        <li class="page-item">
+	            <a class="page-link" href="<%=request.getContextPath()%>/board/list?page=${pageMaker.endPage+1}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">Next</a>
+	        </li>
+	    </c:if>
+	</ul>	
+	<form class="" method="get" action="<%=request.getContextPath()%>/board/list">
+		<select name="type">
+			<option value="0">선택</option>
+			<option value="1" <c:if test="${pageMaker.criteria.type eq 1}">selected</c:if>>제목</option>
+			<option value="2" <c:if test="${pageMaker.criteria.type eq 2}">selected</c:if>>내용</option>
+			<option value="3" <c:if test="${pageMaker.criteria.type eq 3}">selected</c:if>>작성자</option>
+		</select>
+		<input type="text" name="search" value="${pageMaker.criteria.search}">
+		<button type="submit" class="btn btn-outline-primary">검색</button>
+	</form>
 	<a href="<%=request.getContextPath()%>/board/insert"><button type="button" class="btn btn-outline-primary">등록하기</button></a>
 </body>
 </html>
