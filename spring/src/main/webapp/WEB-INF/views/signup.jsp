@@ -42,6 +42,7 @@
 			}
 			return false;
 		}
+		var overLap = 0;				
 		$(document).ready(function(){
 			$('#signup').submit(function(){
 				if(!checkLength('#signup input[name=id]',8,13)){
@@ -60,8 +61,42 @@
 					alert('비밀번호와 일치하지 않습니다.');
 					return false;
 				}
-				alert('회원가입에 성공했습니다.');
-				return true;
+				if(overLap==0){
+					alert('회원가입에 실패했습니다.');
+					return false;
+				}else if(overLap==1){
+					alert('회원가입에 성공했습니다.');
+					return true;	
+				}else{
+					alert('중복확인을 해주세요.')
+					return false;
+				}
+				
+			});
+			
+			$('#dup').click(function(){
+				var id = $('input[name=id]').val();
+				//id 유효성 검사				
+				$.ajax({
+			        async:true,
+			        type:'POST',
+			        data:id,
+			        url:"dup",
+			        dataType:"json",
+			        contentType:"application/json; charset=UTF-8",
+			        success : function(data){
+			            if(!data.isMember){
+			            	alert('회원 가입이 가능한 아이디입니다.');
+			            	overLap = 1;
+			            }else{
+			            	alert('이미 가입된 회원입니다.');
+			            	overLap = 0;
+			            }
+			        }
+			    });				
+			});	
+			$('input[name=id]').change(function(){
+				overLap = 0;
 			});
 		});		
 	</script>
@@ -74,6 +109,9 @@
 				<div class="row">
 					<label class="col-4">아이디</label>
 					<input type="text"class="form-control col-7" placeholder="아이디" name="id">
+				</div>
+				<div>
+					<button type="button" class="btn btn-primary offset-4 col-7" id="dup">아이디 중복확인</button>
 				</div>
 				<div class="row">
 					<label class="col-4">비밀번호</label>
@@ -105,7 +143,7 @@
 					<input type="email"class="form-control col-7" placeholder="이메일" name="email">
 				</div>
 				<div class="offset-8 col-3 clearfix p-0">
-					<button class="btn btn-primary float-right">가입</button>
+					<button class="btn btn-primary float-right" id="join">가입</button>
 				</div>
 			</form>
 		</div>
