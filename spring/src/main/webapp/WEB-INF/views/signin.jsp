@@ -8,7 +8,12 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function(){           
+	        $('input[type=text]').focus();            
+		});
+	</script>
 	<title>로그인</title>
 	<style>
 	*{
@@ -34,7 +39,7 @@
 		<form action="" method="post" >
 			<div class="row">
 				<label class="col-4">아이디</label>
-				<input type="text"class="form-control col-7" placeholder="아이디" name="id">
+				<input type="text"class="form-control col-7 selector" placeholder="아이디" name="id">
 			</div>
 			<div class="row">
 				<label class="col-4">비밀번호</label>
