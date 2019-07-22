@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/additional-methods.js"></script>
 	<title>회원가입</title>
 	<style>
 	*{
@@ -42,11 +44,23 @@
 			}
 			return false;
 		}
+		function checkRegexId(sel){
+			var regex = /^\w*(\d[A-z]|[A-z]\d)\w*$/;
+			var id = $(sel).val();
+			if(regex.test(id)){
+				return true;
+			}
+			return false;
+		}
 		var overLap = 0;				
 		$(document).ready(function(){
 			$('#signup').submit(function(){
 				if(!checkLength('#signup input[name=id]',8,13)){
 					alert('아이디는 8~13자리 입니다.');
+					return false;				
+				}
+				if(!checkRegexId('#signup input[name=id]')){
+					alert('아이디는 영문자와 숫자를 반드시 1개이상 포함해야 합니다.');
 					return false;				
 				}				
 				if(!checkLength('#signup input[name=pw]',8,13)){
@@ -92,13 +106,66 @@
 			            	alert('이미 가입된 회원입니다.');
 			            	overLap = 0;
 			            }
-			        }
-			    });				
+			        }				    
+				});
 			});	
 			$('input[name=id]').change(function(){
 				overLap = 0;
 			});
-		});		
+			$("form").validate({
+		        rules: {
+		            id: {
+		                required : true,
+		                minlength : 8,
+		                maxlength : 20
+		            },
+		            pw: {
+		                required : true,
+		                minlength : 8,
+		                maxlength : 20,
+		                regex: /^\w*(\d[A-z]|[A-z]\d)\w*$/
+		            },
+		            pw2: {
+		                required : true,		                
+		                equalTo : pw
+		            },
+		            email: {
+		                required : true,		                
+		                email : true
+		            }		            
+		        },
+		        //규칙체크 실패시 출력될 메시지
+		        messages : {
+		            id: {
+		                required : "필수로입력하세요",
+		                minlength : "최소 {0}글자이상이어야 합니다",
+		                maxlength : "최대 {0}글자이하이어야 합니다"
+		            },
+		            pw: {
+		                required : "필수로입력하세요",
+		                minlength : "최소 {0}글자이상이어야 합니다",
+	                	maxlength : "최대 {0}글자이하이어야 합니다",
+		                regex : "영문자, 숫자로 이루어져있으며 최소 하나이상 포함"
+		            },
+		            pw2: {
+		                required : "필수로입력하세요",		                
+		                equalTo : "비밀번호가 일치하지 않습니다."
+		            },		            
+		            email: {
+		                required : "필수로입력하세요",		                
+		                email : "메일규칙에 어긋납니다"
+		            }
+		        }
+		    });
+		});
+		$.validator.addMethod(
+		    "regex",
+		    function(value, element, regexp) {
+		        var re = new RegExp(regexp);
+		        return this.optional(element) || re.test(value);
+		    },
+		    "Please check your input."
+		);
 	</script>
 </head>
 <body>
@@ -108,14 +175,17 @@
 			<form method="post" action="" id="signup">
 				<div class="row">
 					<label class="col-4">아이디</label>
-					<input type="text"class="form-control col-7" placeholder="아이디" name="id">
-				</div>
-				<div>
-					<button type="button" class="btn btn-primary offset-4 col-7" id="dup">아이디 중복확인</button>
+					<input type="text"class="form-control col-7" placeholder="아이디" name="id">					
 				</div>
 				<div class="row">
+					<label id="id-error" class="text-danger offset-4 col-7 error p-0" for="id"></label>
+				</div>				
+				<div>
+					<button type="button" class="btn btn-primary offset-4 col-7" id="dup">아이디 중복확인</button>
+				</div>				
+				<div class="row">
 					<label class="col-4">비밀번호</label>
-					<input type="password"class="form-control col-7" placeholder="비밀번호" name="pw">
+					<input type="password"class="form-control col-7" placeholder="비밀번호" name="pw" id="pw">
 				</div>
 				<div class="row">
 					<label class="col-4">비밀번호확인</label>
