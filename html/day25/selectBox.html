@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('select').change(function(){
+                location.href="<%=request.getContextPath()%>/board/list?page=${index}&perPageNum=${pageMaker.criteria.perPageNum eq 5}"
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-group">
+        <label for="sel1">글 갯수</label>
+        <form>
+            <select>
+                <option value="0" selected>선택</option>
+                <option value="5">5개</option>
+                <option value="10">10개</option>
+                <option value="15">15개</option>
+            </select>
+        </form>
+    </div>
+</body>
+</html>
