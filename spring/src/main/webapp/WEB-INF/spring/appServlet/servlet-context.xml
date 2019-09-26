@@ -28,6 +28,8 @@
 		class="kr.green.spring.interceptor.AuthInterceptor"></beans:bean>
 	<beans:bean id="unauthInterceptor" 
 		class="kr.green.spring.interceptor.UnauthInterceptor"></beans:bean>
+	<beans:bean id="adminInterceptor" 
+		class="kr.green.spring.interceptor.AdminInterceptor"></beans:bean>
 	<interceptors>
 		<interceptor>
 			<mapping path="/"/>
@@ -35,7 +37,7 @@
 			<beans:ref bean="loginInterceptor"/>
 		</interceptor>
 		<interceptor>
-	        <mapping path="/board/*"/>
+	        <mapping path="/board/**"/>
 	        <beans:ref bean="authInterceptor"/>
 		</interceptor>
 		<interceptor>
@@ -43,6 +45,10 @@
 	        <mapping path="/signup"/>
 	        <mapping path="/"/>
 	        <beans:ref bean="unauthInterceptor"/>
+		</interceptor>
+		<interceptor>			
+			<mapping path="/admin/**"/>
+			<beans:ref bean="adminInterceptor"/>
 		</interceptor>
 	</interceptors>
 	

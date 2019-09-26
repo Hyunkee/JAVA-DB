@@ -258,6 +258,7 @@ $(document).ready(function(){
 		$('.more-bg-box').toggleClass('display-none');
 		$('.more-box').toggleClass('display-none');
 		$('.more').toggleClass('fold');
+		
 	}
 });
 

@@ -104,8 +104,7 @@ public class HomeController {
 	@RequestMapping(value = "/member/modify", method = RequestMethod.POST)
 	public String memberModifyPost(Model model, MemberVO mVo, String oldPw) {
 		//logger.info("회원정보 수정페이지 진행중"); // 서버기록 관리하는 함수		
-		System.out.println(mVo);
-		System.out.println(oldPw);
+		
 		
 		if(memberService.modify(mVo,oldPw))
 			return "redirect:/";
@@ -127,7 +126,7 @@ public class HomeController {
 	    // 변수 id에 저장된 아이디가 회원 아이디인지 아닌지 확인하여 isMember변수에 담아 보낸다.
 	    boolean isMember = memberService.isMember(id);
 	    map.put("isMember",isMember);	    
-	    System.out.println(map);
+	    
 	    return map;
 	}
 	@RequestMapping(value = "/mail/mailForm")

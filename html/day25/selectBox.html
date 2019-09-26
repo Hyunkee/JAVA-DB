@@ -8,6 +8,7 @@
     <script>
         $(document).ready(function(){
             $('select').change(function(){
+                $('option').addClass('.')
                 location.href="<%=request.getContextPath()%>/board/list?page=${index}&perPageNum=${pageMaker.criteria.perPageNum eq 5}"
             });
         });

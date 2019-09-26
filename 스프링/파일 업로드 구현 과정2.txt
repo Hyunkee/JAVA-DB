@@ -1,0 +1,10 @@
+﻿1. kr.green.spring.utils 패키지 추가
+2. kr.green.spring.utils 패키지 안에 UploadFileUtils 클래스 생성
+3. github- UploadFileUtils 클래스 생성 코드를 UploadFileUtils 클래스에 복붙
+               복붙한 코드 중 makeDir 메소드 안에 
+               if(new File(paths[paths.length-1]).exists())를
+               if(new File(uploadPath+paths[paths.length-1]).exists())로 수정
+4. BoardController에서 
+    String file = uploadFile(file2.getOriginalFilename(),file2.getBytes());를
+    String file = UploadFileUtils.uploadFile(uploadPath, file2.getOriginalFilename(),file2.getBytes());;로 수정
+5. 테스트

@@ -20,6 +20,11 @@
 			<a class="nav-link text-white" href="http://github.com/st8324" target="_blank">github</a>
 		</c:if>
     </li>
+    <li class="nav-item">
+     	<c:if test="${user ne null}">	
+			<a class="nav-link text-white" href="<%=request.getContextPath()%>/admin/user/list">userlist</a>
+		</c:if>
+    </li>
     <li class="nav-item" style="right:20px; position:absolute;">
      	<c:if test="${user ne null}">	
 			<a class="nav-link text-white" href="<%=request.getContextPath()%>/signout">Logout</a>

@@ -11,13 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.green.spring.dao.BoardMapper;
 import kr.green.spring.pagination.Criteria;
 import kr.green.spring.pagination.PageMaker;
 import kr.green.spring.service.BoardService;
 import kr.green.spring.service.MemberService;
+import kr.green.spring.service.PageMakerService;
 import kr.green.spring.vo.BoardVO;
 
 @Controller // 컨트롤러 어노테이션으로 @Controller가 붙으면 컨트롤러로 인식 ,  없을땐 하나의 클래스로 인식한다.
@@ -31,6 +31,8 @@ public class BoardController {
 	MemberService memberSerivce;
 	@Autowired
 	BoardMapper boardMapper;
+	@Autowired
+	PageMakerService pageMakerService;
 	
 	/*
 	 * @RequestMapping(value="/list", method=RequestMethod.GET) public String
@@ -90,17 +92,10 @@ public class BoardController {
 	}
 	@RequestMapping(value="/list")	
 	public String boardList(Model model, Criteria cri) {
-		logger.info("페이징");
-	    int totalCount = boardMapper.countBoard(cri);
-	    cri.setPerPageNum(5);
-	    PageMaker pageMaker = new PageMaker();
-	    //pageMaker의 displayPageNum 설정
-	    pageMaker.setDisplayPageNum(2);
-	    //pageMaker의 현재 페이지 정보 설정
-	    pageMaker.setCriteria(cri);
-	    //pageMakek의 총 게시글 수 설정
-	    pageMaker.setTotalCount(totalCount);
-	    System.out.println(cri);
+		//logger.info("페이징");	    
+	    cri.setPerPageNum(5);	    
+	    int totalCount = boardMapper.countBoard(cri);	    
+	    PageMaker pageMaker = pageMakerService.getPageMaker(5, cri, totalCount);	    
 	    ArrayList<BoardVO> list 
 	        =  (ArrayList<BoardVO>)boardMapper.listPage(pageMaker.getCriteria());
 	    

@@ -1,0 +1,28 @@
+﻿1. modify.jsp에서 
+   - form태그에 enctype="multipart/form-data" 추가
+   - input태그의 name=file에 value를 ${board.fileName}으로 수정
+   - name=file인 input태그 밑에 name=file2이고 type=file인 input태그 추가
+
+2. BoardController에서
+   - boardModifyPost메소드의 매개변수 MultipartFile file2를 추가
+   - boardRegisterPost메소드의 파일 업로드하는 코드를 복붙 후 boardVo를 bVo로 수정
+
+if(file2.getOriginalFilename().length() != 0) {
+	String file = UploadFileUtils.uploadFile(uploadPath, file2.getOriginalFilename(),file2.getBytes());;
+	bVo.setFile(file);
+}
+
+    - 에러 해결하기 위해 add throws declaration를 클릭
+    - else문 추가
+
+else {
+	BoardVO tmp = boardService.getBoard(bVo.getNum());
+	bVo.setFile(tmp.getFile());
+}
+
+3. 테스트
+
+
+
+
+                    
